@@ -1,0 +1,16 @@
+/* Aplicar el fondo de imagen a todo el cuerpo */
+body {
+    background: url('inimgs/LOG.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Asegura que el cuerpo tome la altura completa */
+}
+
+/* Estilos para el formulario */
+form {
+    background-color: white; /* Fondo blanco para el formulario */
+    padding: 20px;           /* Espaciado interno */
+    border-radius: 8px;      /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}

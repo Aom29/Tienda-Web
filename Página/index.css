@@ -1,0 +1,476 @@
+:root{
+    --mor: #7c7ea5;
+}
+
+*{
+    margin: 0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size:62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    color: #333;
+    padding: 3rem;
+    font-size: large;
+    background-color: #EDEBF6;
+    border-radius: 3cm;
+}
+
+.heading span{
+    color: var(--mor);
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333;
+    color: white;
+    padding: .9rem 3.5rem;
+    font-size: 1.7rem;
+}
+
+.btn:hover{
+    background-color: var(--mor);
+}
+
+
+header{
+    position:fixed;
+    top: 0; left:0; right:0;
+    background-color: #FFF;
+    padding: 2rem 9%;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+
+}
+
+header .logo span{
+    color:var(--mor);
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding: o 1.5 rem;
+    color: #666;
+}
+
+header .navbar a:hover{
+    color:var(--mor);
+}
+
+header .icons a{
+    font-size: 2.5rem;
+    color: #333;
+    margin-left:  1.5rem;
+}
+
+header .icons a:hover{
+    color:var(--mor);
+}
+
+header #toggler{
+    display: none;
+}
+
+header .fa-bars{
+    font-size: 3rem;
+    color: #333;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0,0,0,.3);
+    display: none;
+}
+
+
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(inimgs/grappe.png) no-repeat center center fixed;
+    background-size: cover;
+    background-color: #edeeff;
+}
+
+.home .content{
+    max-width: 50rem;
+}
+
+.home .content h3{
+    font-size: 6rem;
+    color: #333;
+}
+
+.home .content span{
+    font-size: 3.5rem;
+    color:var(--mor);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.home .content p{
+    font-size: 1.5rem;
+    color: #999;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+/* Estilos generales para la sección de productos */
+.productos {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.productos .heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.category-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #EDEBF6;
+}
+
+.category-title {
+    margin-top: 1cm;
+    font-size: 2rem;
+    color: var(--mor);
+}
+
+/* Carrusel */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel::before,
+.carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 5rem;
+    z-index: 1;
+}
+
+.carousel::before {
+    left: 0;
+}
+
+.carousel::after {
+    right: 0;
+}
+
+.box {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-width: 250px;
+    text-align: center;
+    cursor: pointer;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eee;
+}
+
+.box h3 {
+    font-size: 1.5rem;
+    color: var(--mor);
+    margin: 1rem 0;
+}
+
+.box .discount {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #ff6b6b;
+    color: #ffffff;
+    padding: .5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.box .price {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.box .cart-btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--mor);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+    font-size: small;
+}
+
+.box .cart-btn:hover {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-body img {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 15px;
+}
+
+.modal-body h3 {
+    font-size: 2rem;
+    color: var(--mor);
+    margin-bottom: 15px;
+}
+
+.modal-body p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.close {
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--mor);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+/* RESPONSIVIDAD */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .home {
+        background-position: left;
+    }
+
+    .productos {
+        padding: 1.5rem;
+    }
+
+    .category-title {
+        font-size: 1.8rem;
+    }
+
+    .box {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .fa-bars {
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #eeee;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked ~ .navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem 1rem;
+        background: white;
+        border: 0.1rem solid rgba(0, 0, 0, 0.1);
+        display: block;
+    }
+
+    .home .content h3 {
+        font-size: 5rem;
+    }
+
+    .home .content span {
+        font-size: 2.5rem;
+    }
+
+    .carousel {
+        gap: 0.5rem;
+    }
+
+    .box {
+        min-width: 180px;
+    }
+
+    .box h3 {
+        font-size: 1.2rem;
+    }
+
+    .box .price {
+        font-size: 1.2rem;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .modal-body h3 {
+        font-size: 1.5rem;
+    }
+
+    .modal-body p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    .category-title {
+        font-size: 1.2rem;
+    }
+
+    .box {
+        min-width: 150px;
+    }
+
+    .box h3 {
+        font-size: 1rem;
+    }
+
+    .box .price {
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-width: 300px;
+    }
+
+    .modal-body h3 {
+        font-size: 1.2rem;
+    }
+
+    .modal-body p {
+        font-size: 0.9rem;
+    }
+}
