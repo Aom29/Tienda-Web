@@ -66,7 +66,7 @@ $(document).ready(() => {
             cancelButtonText: 'No, cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                let isValid = true; // CAMBIAR DEPENDIENDO DE LA RESPUESTA DE LA BASE
+                let isValid = false; // CAMBIAR DEPENDIENDO DE LA RESPUESTA DE LA BASE
                     if (isValid) {
                         Swal.fire(
                             'Guardado',
@@ -79,7 +79,7 @@ $(document).ready(() => {
                     } else {
                         Swal.fire(
                             'Error',
-                            'Por favor, completa todos los campos obligatorios.',
+                            'El producto no se pudo registrar correctamente',
                             'error'
                         );
                     }
