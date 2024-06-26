@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`administrador` (
   `Contraseña` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id_adm`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 81
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`producto` (
   PRIMARY KEY (`id_producto`),
   INDEX `id_categoria` (`id_categoria` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 101
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`categoria` (
   `Descripcion` TEXT NOT NULL,
   PRIMARY KEY (`id_categoria`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 20
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`cliente` (
   `CVV` INT NOT NULL,
   PRIMARY KEY (`id_cliente`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 232
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
