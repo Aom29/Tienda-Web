@@ -6,13 +6,17 @@
     <title>Productos</title>
     <link rel="icon" type="image/x-icon" href="inimgs/pest.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- JustValidate -->
-    <script src="https://cdn.jsdelivr.net/npm/just-validate@2.7.0/dist/js/just-validate.production.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="barranav.css">
     <link rel="stylesheet" href="pedidocliente.css">
     <link rel="stylesheet" href="dropdown.css">
     <link rel="stylesheet" href="producto.css">
+    <!-- Libs -->
+    <script src="./libs/jquery-3.7.1.min.js"></script>
+    <script src="./libs/justValidate.min.js"></script>
+    <!-- Validación -->
+    <script src="./validacion.js"></script>
+
     <style>
 
 
@@ -90,6 +94,7 @@
             <header>
                 <div class="text">
                   <h2 class="animated-text">Productos</h2>                  
+                  <form action="#" id="nuevoProducto">
                     <table>
                       <center>
                       <div class="card">
@@ -109,26 +114,26 @@
                                         </div>
                                     </label>
                                 </div>
-                                <div class="form-fields">
+                                  <div class="form-fields">
                                     <div class="input-group half-width">
-                                      <input type="text" id="nombre" required>
+                                      <input type="text" id="nombre">
                                       <label for="nombre">Nombre</label>
                                     </div>
                                     <div class="input-group half-width">
-                                      <select id="categoria" required>
+                                      <select id="categoria">
                                         <option value="" disabled selected>Selecciona una categoría</option>
                                         <option value="categoria1">Categoría 1</option>
                                         <option value="categoria2">Categoría 2</option>
                                         <option value="categoria3">Categoría 3</option>
-                                    </select>
+                                      </select>
                                     <label for="categoria"></label>
                                     </div>
                                     <div class="input-group full-width">
-                                      <input type="text" id="descripcion" required>
+                                      <input type="text" id="descripcion">
                                       <label for="descripcion">Descripción</label>
                                     </div>
                                     <div class="input-group one-third-width">
-                                      <input type="text" id="precio" required>
+                                      <input type="text" id="precio">
                                       <label for="precio">Precio</label>
                                     </div>
                                     <div class="input-group one-third-width">
@@ -136,17 +141,17 @@
                                       <label for="descuento">Descuento</label>
                                     </div>
                                     <div class="input-group one-third-width">
-                                      <input type="text" id="stock" required>
+                                      <input type="text" id="stock">
                                       <label for="stock">Stock</label>
                                     </div>
+                                  </div>
+                                  <div class="button-container">
+                                    <button class="cancel-button">Cancelar</button>
+                                    <button type="submit" class="save-button">Guardar</button>
+                                  </div>
                                 </div>
-                                <div class="button-container">
-                                  <button class="cancel-button">Cancelar</button>
-                                  <button class="save-button">Guardar</button>
+                                
                               </div>
-                            </div>
-                            
-                        </div>
                     </div>
                   </center>
             <div class="header-row">
@@ -154,18 +159,18 @@
               <div class="sort-dropdown">
                   <label for="sort-select">Ordenar por:</label>
                   <select id="sort-select">
-                      <option value="recent">Más recientes</option>
-                      <option value="oldest">Más viejos</option>
+                    <option value="recent">Más recientes</option>
+                    <option value="oldest">Más viejos</option>
                       <option value="oldest">Mayor precio</option>
                       <option value="oldest">Menor precio</option>
                       <option value="a-z">A-Z</option>
                       <option value="z-a">Z-A</option>
                       <option value="oldest">No entregado</option>
-                  </select>
+                    </select>
               </div>
           </div>
-            <thead>
-              <tr>
+          <thead>
+            <tr>
                 <th scope="col" width="100px">ID</th>
                 <th scope="col" width="100px">Nombre</th>
                 <th scope="col" >Descripción</th>
@@ -176,74 +181,74 @@
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td data-label="Account">#3412</td>
+                <td data-label="Nombre">Usuario 1</td>
+                <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                <td data-label="Due Date">$64.00</td>
+                <td data-label="Due Date">25</td>
+                <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
+                  &nbsp; 
+                  <i class="fa-solid fa-trash ticon"></i>
+                  
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td data-label="Account">#3412</td>
+                    <td data-label="Nombre">Usuario 1</td>
+                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                    <td data-label="Due Date">$64.00</td>
+                    <td data-label="Due Date">25</td>
+                <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
+                  &nbsp; 
+                  <i class="fa-solid fa-trash ticon"></i>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-label="Account">#3412</td>
+                <td data-label="Nombre">Usuario 1</td>
+                <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                <td data-label="Due Date">$64.00</td>
+                <td data-label="Due Date">25</td>
+                <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
+                  &nbsp; 
+                  <i class="fa-solid fa-trash ticon"></i>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+                    <td data-label="Account">#3412</td>
+                    <td data-label="Nombre">Usuario 1</td>
+                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                    <td data-label="Due Date">$64.00</td>
+                    <td data-label="Due Date">25</td>
+                    <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
+                      &nbsp; 
+                      <i class="fa-solid fa-trash ticon"></i>
+                    </div>
+                  </td>
+                </tr>
+                
                 <tr>
-                    <td data-label="Account">#3412</td>
-                    <td data-label="Nombre">Usuario 1</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Due Date">$64.00</td>
-                    <td data-label="Due Date">25</td>
-                    <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
-                        &nbsp; 
-                        <i class="fa-solid fa-trash ticon"></i>
-                        
-                      </div>
-                    </td>
-                  </tr>
-          
-              <tr>
-                <td data-label="Account">#3412</td>
-                <td data-label="Nombre">Usuario 1</td>
-                <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                <td data-label="Due Date">$64.00</td>
-                <td data-label="Due Date">25</td>
-                <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
-                  &nbsp; 
-                  <i class="fa-solid fa-trash ticon"></i>
+                  <td data-label="Account">#3412</td>
+                  <td data-label="Nombre">Usuario 1</td>
+                  <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                  <td data-label="Amount">Lorem ispum dummy text industry.</td>
+                  <td data-label="Due Date">$64.00</td>
+                  <td data-label="Due Date">25</td>
+                  <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
+                    &nbsp; 
+                    <i class="fa-solid fa-trash ticon"></i>
                   </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td data-label="Account">#3412</td>
-                <td data-label="Nombre">Usuario 1</td>
-                <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                <td data-label="Due Date">$64.00</td>
-                <td data-label="Due Date">25</td>
-                <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
-                  &nbsp; 
-                  <i class="fa-solid fa-trash ticon"></i>
-                  </div>
-                </td>
-              </tr>
-          
-                  <tr>
-                    <td data-label="Account">#3412</td>
-                    <td data-label="Nombre">Usuario 1</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Due Date">$64.00</td>
-                    <td data-label="Due Date">25</td>
-                    <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
-                      &nbsp; 
-                      <i class="fa-solid fa-trash ticon"></i>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td data-label="Account">#3412</td>
-                    <td data-label="Nombre">Usuario 1</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Due Date">$64.00</td>
-                    <td data-label="Due Date">25</td>
-                    <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
-                      &nbsp; 
-                      <i class="fa-solid fa-trash ticon"></i>
-                      </div>
                     </td>
                   </tr>
           
@@ -257,21 +262,22 @@
                     <td data-label="Period"><i class="fa-solid fa-pen-to-square  ticon"></i>
                       &nbsp; 
                       <i class="fa-solid fa-trash ticon"></i>
-                      </div>
-                    </td>
+                    </div>
+                  </td>
                   </tr>
-
-            </tbody>
+                  
+                </tbody>
           </table>
+        </form>
                 </div>
               </header>
               
               
-        </div>
-        <script>
+            </div>
+            <script>
           // VALIDACION
           
-
+          
           // BOTON
           document.getElementById('toggle-btn').addEventListener('click', function() {
           const content = document.querySelector('.product-content');
@@ -315,7 +321,7 @@
            <script src="barranav.js"></script>
            <script src="dropdown.js"></script>
            <script src="producto.js"></script>
-           <script src="validacion.js"></script>
+           <!-- <script src="validacion.js"></script> -->
            
 
 
