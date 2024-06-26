@@ -99,26 +99,26 @@ INSERT INTO `cliente` (`id_cliente`, `Nombre`, `Apellido`, `Email`, `Contraseña
 --
 
 INSERT INTO `categoria` (`id_categoria`, `Nombre`, `Descripcion`) VALUES 
-(0, "smartphones", "Hola"),
-(1, "laptops", "Hola"),
-(2, "fragrances", "Hola"),
-(3, "skincare", "Hola"),
-(4, "groceries", "Hola"),
-(5, "home-decoration", "Hola"),
-(6, "furniture", "Hola"),
-(7, "tops", "Hola"),
-(8, "womens-dresses", "Hola"),
-(9, "womens-shoes", "Hola"),
-(10, "mens-shirts", "Hola"),
-(11, "mens-shoes", "Hola"),
-(12, "mens-watches", "Hola"),
-(13, "womens-watches", "Hola"),
-(14, "womens-bags", "Hola"),
-(15, "womens-jewellery", "Hola"),
-(16, "sunglasses", "Hola"),
-(17, "automotive", "Hola"),
-(18, "motorcycle", "Hola"),
-(19, "lighting", "Hola");
+(1, "smartphones", "Hola"),
+(2, "laptops", "Hola"),
+(3, "fragrances", "Hola"),
+(4, "skincare", "Hola"),
+(5, "groceries", "Hola"),
+(6, "home-decoration", "Hola"),
+(7, "furniture", "Hola"),
+(8, "tops", "Hola"),
+(9, "womens-dresses", "Hola"),
+(10, "womens-shoes", "Hola"),
+(11, "mens-shirts", "Hola"),
+(12, "mens-shoes", "Hola"),
+(13, "mens-watches", "Hola"),
+(14, "womens-watches", "Hola"),
+(15, "womens-bags", "Hola"),
+(16, "womens-jewellery", "Hola"),
+(17, "sunglasses", "Hola"),
+(18, "automotive", "Hola"),
+(19, "motorcycle", "Hola"),
+(20, "lighting", "Hola");
 
 -- --------------------------------------------------------
 
