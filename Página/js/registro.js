@@ -36,12 +36,32 @@ $(document).ready(()=>{
     ])
     .onSuccess((evt)=>{
       evt.preventDefault();
-      Swal.fire({
-        title:"Grappe Shop",
-        text:"Registro completado con éxito",
-        icon:"success",
-        didDestroy:()=>{
-          window.location.reload();
+      let nombreRegistro = $("#nombreRegistro").val();
+      let apellidoRegistro = $("#apellidoRegistro").val();
+      let emailRegistro = $("#emailRegistro").val();
+      let passwordRegistro = $("#passwordRegistro").val();
+      $.ajax({
+        url:"./php/registro_AX.php",
+        type:"POST",
+        data:{nombreRegistro:nombreRegistro, apellidoRegistro:apellidoRegistro, emailRegistro:emailRegistro, passwordRegistro:passwordRegistro},
+        cache:false,
+        success:(respAX)=>{
+          let objRespAX = JSON.parse(respAX);
+          let mensaje = "";
+          mensaje = objRespAX.msj;
+          Swal.fire({
+            title:"Grappe Shop",
+            text: mensaje,
+            icon:objRespAX.icono,
+            didDestroy:()=>{
+              if(objRespAX.cod == 1){
+                sessionStorage.setItem("emailRegistro",emailRegistro);
+                window.location.href = "./index.html";
+              }else{
+                // window.location.reload();
+              }
+            }
+          });
         }
       });
     });
