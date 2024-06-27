@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="admincss/barranav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../inimgs/pest.png">
+    <style>
+        .floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    background-color: #6e709c;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.floating-button:hover {
+    background-color: #5b688e;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="heart-outline"></ion-icon></span>
+                        <span class="title" style="font-size: 1.5em;font-weight: 500;">Grappe Admin</span>
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="admin.html">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="clientes.html">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="title">Clientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pedidos.html">
+                        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                        <span class="title">Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="productos.html">
+                        <span class="icon"><ion-icon name="storefront-outline"></ion-icon></span>
+                        <span class="title">Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="perfil.html">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="title">Perfil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <!-- Buscador -->
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Buscar">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <!-- User -->
+            <a href="perfil.html">
+                <div class="user">
+                    <img src="../inimgs/user.png" alt="User Image">
+                </div>
+                </a>
+        </div>
+
+        <!-- Cards -->
+        <div class="cardBox">
+            <div class="card">
+                <div>
+                    <div class="numbers">1,504</div>
+                    <div class="cardName">Usuarios</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">80</div>
+                    <div class="cardName">Ventas</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">284</div>
+                    <div class="cardName">Comentarios</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">$7,504</div>
+                    <div class="cardName">Ganado</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="cash-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Charts -->
+        <div class="graphBox">
+            <div class="box">
+                <canvas id="myChart2"></canvas>
+            </div>
+            <div class="box">
+                <canvas id="myChart3"></canvas>
+        
+        </div>
+        <div class="box">
+            <canvas id="myChart1"></canvas>
+        </div>
+        </div>
+    </div> <!--main-->
+
+    <button id="generate-pdf-btn" class="floating-button">
+        <ion-icon name="document-text-outline"></ion-icon>  PDF
+    </button>
+    
+    
+    
+
+    <!-- Ionicons Script -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+     <script src="adminjs/chart1.js"></script>
+     <script src="adminjs/chart2.js"></script>
+     <script src="adminjs/chart3.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="adminjs/barranav.js"></script>
+    <script src="adminjs/convertirPDF.js"></script>
+</body>
+</html>
