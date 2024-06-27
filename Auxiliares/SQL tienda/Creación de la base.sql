@@ -32,42 +32,6 @@ AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
--- -----------------------------------------------------
--- Table `grappe1`.`producto`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `grappe1`.`producto` (
-  `id_producto` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(255) NOT NULL,
-  `Precio` DECIMAL(15,0) NOT NULL,
-  `Stock` INT NOT NULL,
-  `id_categoria` INT NOT NULL,
-  `Descuento` DECIMAL(10,2) NOT NULL,
-  `Descripcion` TEXT NOT NULL,
-  `Disponible` TINYINT NOT NULL,
-  PRIMARY KEY (`id_producto`),
-  INDEX `id_categoria` (`id_categoria` ASC))
-ENGINE = InnoDB
-AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_unicode_ci;
-
--- -----------------------------------------------------
--- Table `grappe1`.`agrega`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `grappe1`.`agrega` (
-  `id_producto` INT NOT NULL,
-  `id_adm` INT NOT NULL,
-  INDEX `id_producto` (`id_producto` ASC, `id_adm` ASC),
-  INDEX `id_adm` (`id_adm` ASC),
-  CONSTRAINT `agrega_ibfk_1`
-    FOREIGN KEY (`id_producto`)
-    REFERENCES `grappe1`.`producto` (`id_producto`),
-  CONSTRAINT `agrega_ibfk_2`
-    FOREIGN KEY (`id_adm`)
-    REFERENCES `grappe1`.`administrador` (`id_adm`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_unicode_ci;
 
 -- -----------------------------------------------------
 -- Table `grappe1`.`categoria`
@@ -81,6 +45,7 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
+
 
 -- -----------------------------------------------------
 -- Table `grappe1`.`cliente`
@@ -103,6 +68,7 @@ AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
+
 -- -----------------------------------------------------
 -- Table `grappe1`.`pedido`
 -- -----------------------------------------------------
@@ -122,28 +88,39 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`pedido` (
   INDEX `id_cliente` (`id_cliente` ASC),
   CONSTRAINT `pedido_ibfk_1`
     FOREIGN KEY (`id_cliente`)
-    REFERENCES `grappe1`.`cliente` (`id_cliente`))
+    REFERENCES `grappe1`.`cliente` (`id_cliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
+
 -- -----------------------------------------------------
--- Table `grappe1`.`producto_has_categoria`
+-- Table `grappe1`.`producto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `grappe1`.`producto_has_categoria` (
-  `id_producto` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `grappe1`.`producto` (
+  `id_producto` INT NOT NULL AUTO_INCREMENT,
+  `Nombre` VARCHAR(255) NOT NULL,
+  `Precio` DECIMAL(15,0) NOT NULL,
+  `Stock` INT NOT NULL,
   `id_categoria` INT NOT NULL,
-  INDEX `id_producto` (`id_producto` ASC, `id_categoria` ASC),
-  INDEX `id_categoria` (`id_categoria` ASC),
-  CONSTRAINT `pertenece_ibfk_1`
-    FOREIGN KEY (`id_producto`)
-    REFERENCES `grappe1`.`producto` (`id_producto`),
-  CONSTRAINT `pertenece_ibfk_2`
+  `Descuento` DECIMAL(10,2) NOT NULL,
+  `Descripcion` TEXT NOT NULL,
+  `Thumbnail` VARCHAR(255) NOT NULL,
+  `Disponible` TINYINT NOT NULL,
+  PRIMARY KEY (`id_producto`),
+  INDEX `fk_producto_categoria1_idx` (`id_categoria` ASC),
+  CONSTRAINT `fk_producto_categoria1`
     FOREIGN KEY (`id_categoria`)
-    REFERENCES `grappe1`.`categoria` (`id_categoria`))
+    REFERENCES `grappe1`.`categoria` (`id_categoria`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
+
 
 -- -----------------------------------------------------
 -- Table `grappe1`.`review`
@@ -160,13 +137,18 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`review` (
   INDEX `id_producto` (`id_producto` ASC),
   CONSTRAINT `review_ibfk_1`
     FOREIGN KEY (`id_cliente`)
-    REFERENCES `grappe1`.`cliente` (`id_cliente`),
+    REFERENCES `grappe1`.`cliente` (`id_cliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   CONSTRAINT `review_ibfk_2`
     FOREIGN KEY (`id_producto`)
-    REFERENCES `grappe1`.`producto` (`id_producto`))
+    REFERENCES `grappe1`.`producto` (`id_producto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
+
 
 -- -----------------------------------------------------
 -- Table `grappe1`.`pedido_has_producto`
@@ -176,17 +158,22 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`pedido_has_producto` (
   `producto` INT NOT NULL,
   `id_producto` INT NOT NULL,
   `id_pedido` INT NOT NULL,
-  INDEX `id_producto` (`id_producto` ASC, `id_pedido` ASC),
+  INDEX `id_producto` (`id_producto` ASC),
   INDEX `id_pedido` (`id_pedido` ASC),
   CONSTRAINT `tiene_ibfk_1`
     FOREIGN KEY (`id_producto`)
-    REFERENCES `grappe1`.`producto` (`id_producto`),
+    REFERENCES `grappe1`.`producto` (`id_producto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   CONSTRAINT `tiene_ibfk_2`
     FOREIGN KEY (`id_pedido`)
-    REFERENCES `grappe1`.`pedido` (`id_pedido`))
+    REFERENCES `grappe1`.`pedido` (`id_pedido`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
+
 
 -- -----------------------------------------------------
 -- Table `grappe1`.`producto_carrito`
@@ -211,6 +198,25 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`producto_carrito` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `grappe1`.`images`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `grappe1`.`images` (
+  `producto_id_producto` INT NOT NULL,
+  `link` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`producto_id_producto`, `link`),
+  INDEX `fk_images_producto1_idx` (`producto_id_producto` ASC),
+  CONSTRAINT `fk_images_producto1`
+    FOREIGN KEY (`producto_id_producto`)
+    REFERENCES `grappe1`.`producto` (`id_producto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
