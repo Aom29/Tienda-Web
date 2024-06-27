@@ -88,7 +88,9 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`pedido` (
   INDEX `id_cliente` (`id_cliente` ASC),
   CONSTRAINT `pedido_ibfk_1`
     FOREIGN KEY (`id_cliente`)
-    REFERENCES `grappe1`.`cliente` (`id_cliente`))
+    REFERENCES `grappe1`.`cliente` (`id_cliente`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
@@ -112,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`producto` (
   CONSTRAINT `fk_producto_categoria1`
     FOREIGN KEY (`id_categoria`)
     REFERENCES `grappe1`.`categoria` (`id_categoria`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
@@ -135,10 +137,14 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`review` (
   INDEX `id_producto` (`id_producto` ASC),
   CONSTRAINT `review_ibfk_1`
     FOREIGN KEY (`id_cliente`)
-    REFERENCES `grappe1`.`cliente` (`id_cliente`),
+    REFERENCES `grappe1`.`cliente` (`id_cliente`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `review_ibfk_2`
     FOREIGN KEY (`id_producto`)
-    REFERENCES `grappe1`.`producto` (`id_producto`))
+    REFERENCES `grappe1`.`producto` (`id_producto`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
@@ -156,10 +162,14 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`pedido_has_producto` (
   PRIMARY KEY (`id_producto`, `id_pedido`),
   CONSTRAINT `tiene_ibfk_1`
     FOREIGN KEY (`id_producto`)
-    REFERENCES `grappe1`.`producto` (`id_producto`),
+    REFERENCES `grappe1`.`producto` (`id_producto`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `tiene_ibfk_2`
     FOREIGN KEY (`id_pedido`)
-    REFERENCES `grappe1`.`pedido` (`id_pedido`))
+    REFERENCES `grappe1`.`pedido` (`id_pedido`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
@@ -178,13 +188,13 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`producto_carrito` (
   CONSTRAINT `fk_cliente_has_producto_cliente1`
     FOREIGN KEY (`cliente_id_cliente`)
     REFERENCES `grappe1`.`cliente` (`id_cliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_cliente_has_producto_producto1`
     FOREIGN KEY (`producto_id_producto`)
     REFERENCES `grappe1`.`producto` (`id_producto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
@@ -201,8 +211,8 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`images` (
   CONSTRAINT `fk_images_producto1`
     FOREIGN KEY (`producto_id_producto`)
     REFERENCES `grappe1`.`producto` (`id_producto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
