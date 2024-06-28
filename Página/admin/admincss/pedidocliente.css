@@ -319,6 +319,20 @@
 
    
 @media (max-width: 768px) and (min-width: 427px)  {
+
+  .sort-dropdown {
+    margin-bottom: 20px;
+  }
+  
+  .sort-dropdown label {
+    margin-right: 0px;
+  }
+  
+  .sort-dropdown select {
+    padding: 5px;
+    font-size: 14px;
+  }
+
   header {
     margin-top: 30px;
     display:block;
@@ -330,12 +344,13 @@
 
   .table, .table tbody, .table tr, .table td {
       display: block;
-      width: 100%;
+      width: 98.7%;
   }
 
   .table tr {
       margin-bottom: 15px;
-        margin-left: -9px;
+        align-items: center;
+        justify-content: center;
   }
 
   .table td {
@@ -400,4 +415,6 @@
     }
 
 }
+
+
 
