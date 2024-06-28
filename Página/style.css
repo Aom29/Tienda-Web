@@ -68,8 +68,10 @@ img{
     display: none;
 }
 
-.menu-icono{
+.menu-icono {
     width: 25px;
+    margin: 0 10px;
+    cursor: pointer;
 }
 
 .menu label{
@@ -79,6 +81,8 @@ img{
 
 .submenu{
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .submenu #carrito{
@@ -203,12 +207,25 @@ th {
     margin-bottom: 15px;
 }
 
-.btn-2{
+#botones-carrito {
+    text-align: center; /* Centra los elementos dentro del contenedor */
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+.btn-carrito{
     display:inline-block;
     padding: 7px 10px;
-    background-color: #111111;
+    background-color: #7C7EA5;
     color: #FFFFFF;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    border-color: #7C7EA5;
+}
+
+.btn-carrito:hover{
+    background-color: white;
+    color: #5d5e7e;
+    border-radius: 15px;
     font-size: 15px;
 }
 
@@ -217,30 +234,53 @@ th {
     text-align: center;
 }
 
+.ofertss h2{
+    color: #5d5e7e;
+    font-family: 'Oswald',sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
 .products h2{
-    color: #111111;
+    color: #5d5e7e;
     font-family: 'Oswald',sans-serif;
     font-size: 50px;
     text-transform: uppercase;
     margin-bottom: 50px;
 }
 
-.product-content{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap: 50px;
+.product-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;;
 }
 
-.product{
+.product {
+    position: relative;
+    width: 250px; /* Adjust as needed */
+    padding: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff;
     text-align: center;
-    padding: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
 }
 
 .product img{
     width: 100%; 
     height: auto;
     object-fit: cover; 
+    font-size: 18px;
+    margin-bottom: 10px; 
 }
 
 .product h3{
@@ -340,21 +380,119 @@ th {
     margin-bottom: 10px;
 }
 
+.tachado {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.descuento {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #7C7EA5;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    z-index: 10;
+}
+
 /* Estilos para el rating de estrellas */
 .star-rating {
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 15px 0;
 }
 
 .star {
-    width: 20px;
-    height: 20px;
-    background: url('images/star-empty.png') no-repeat center center / contain;
+    font-size: 18px;
+    color: gold;
 }
 
-.star.full {
-    background: url('images/star-full.png') no-repeat center center / contain;
+.full {
+    color: gold;
+}
+
+.precio {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.tachado {
+    text-decoration: line-through;
+    color: grey;
+    margin-right: 10px;
+}
+
+.agregar-carrito {
+    color: #fff;
+    background-color: #5d5e7e;
+    border: 1px solid #5d5e7e;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.agregar-carrito:hover {
+    color: #5d5e7e;
+    background-color: #fff;
+    border-color: #5d5e7e;
+    border-radius: 3cm;
+}
+
+
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Altura fija del contenedor del carrusel */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 768px) {
+    .product {
+        width: 100%;
+    }
 }
 
 
@@ -479,6 +617,17 @@ th {
         flex-direction: column;
         text-align: center;
     }   
+}
+
+@media (max-width: 768px) {
+    .product {
+        width: 100%;
+    }
+
+    .descuento {
+        top: 5px;
+        left: 5px;
+    }
 }
 
 @media (max-width: 600px) {
