@@ -8,7 +8,30 @@
 }
 
 
+.header {
+    display: flex;
+    align-items: center;
+    max-height: 2cm;
+    background-color: #7C7EA5;
+    position: relative; 
+}
 
+.logo {
+    font-size: 35px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+    cursor: pointer; 
+    margin-right: auto; 
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; 
+    padding: 10px 20px; 
+}
 
 .swal2-popup {
     height:auto !important; /* Ajusta la altura según sea necesario */
