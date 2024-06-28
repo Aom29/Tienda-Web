@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    cargarProductos();
-    
+    // cargarProductos();
+    mostrarProductosBase();
+
     const carrito = document.getElementById('carrito');
     const lista = document.querySelector('#lista-carrito tbody');
     const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
@@ -39,6 +40,36 @@ document.addEventListener('DOMContentLoaded', () => {
             contenedor.appendChild(div);
         });
     }
+
+    function mostrarProductosBase(){
+        let emailLogin = sessionStorage.getItem("emailLogin");
+        $.ajax({
+            url:"./php/mostrarProductos_AX.php",
+            type:"POST",
+            data:{emailLogin:emailLogin},
+            cache:false,
+            success:(respAX)=>{
+                // console.log(respAX);
+                let objRespAX = JSON.parse(respAX);
+                let productos = objRespAX.productos;
+                // console.log(productos);
+                productos.forEach(producto => {
+                    const div = document.createElement('div');
+                    div.classList.add('product');
+                    div.innerHTML = `
+                    <img src="${producto.Thumbnail}" alt="${producto.Nombre}">
+                    <div class="product-txt">
+                    <h3>${producto.Nombre}</h3>
+                    <p>${producto.Descripcion}</p>
+                    <p class="precio">$${producto.Precio}</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="${producto.id_producto}">Agregar al carrito</a>
+                    </div>
+                    `;
+                    document.getElementById('product-content').appendChild(div);
+                });
+            }
+        });
+    }
     
     function comprarElemento(e) {
         e.preventDefault();
@@ -66,10 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
             data:{emailLogin:emailLogin},
             cache:false,
             success:(respAX)=>{
-                console.log(respAX);
+                // console.log(respAX);
                 let objRespAX = JSON.parse(respAX);
                 let productos = objRespAX.productos;
-                console.log(productos);
+                // console.log(productos);
                 productos.forEach(producto => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
