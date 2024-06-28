@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+
+*{
+    margin: 0; padding:0;
+}
+
+
+
+
+.swal2-popup {
+    height:auto !important; /* Ajusta la altura según sea necesario */
+    max-width:max-content !important; /* Limita el ancho máximo */
+    padding: 20px !important; /* Ajusta el relleno interno */
+   
+    
+}
+
+.Pago .container{
+    margin-top: 26%;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 90px;
+}
+
+
+
+.Pago .container .left .submit-btn{
+    width: 30%;
+    background:linear-gradient(90deg, #6e709c, #7e7eb2);
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color:#fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.Pago .container .left  .submit-btn:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+
+.Pago .container .card-container .front{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0; left: 0;
+    background:linear-gradient(45deg, #7c7093, #c58dbf);
+    border-radius: 5px;
+    backface-visibility: hidden;
+
+    padding:20px;
+    transform:perspective(1000px) rotateY(0deg);
+    transition:transform .4s ease-out;
+}
+
+.Pago .container .left .monedero .contenido-monedero .front .image{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-top: -5px;
+}
+
+.Pago .container .card-container .front .image img{
+    height: 50px;
+}
+
+
+
+
+
+
+
+.Pago .container .card-container .front .flexbox .box{
+    font-size: 14px;
+    min-width: 170px;
+    text-align: left;
+    background: transparent;
+    color:#fff;
+    padding: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0);
+}
+
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    flex-direction: column;
+}
+
+ul {
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+}
+
+ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul li .icon {
+    font-size: 35px;
+    color: #7C7EA5;
+    margin: 0 60px;
+}
+
+ul li .text {
+    font-size: 14px;
+    font-weight: 100;
+    color: #7C7EA5;
+}
+
+/* Estilos específicos para el progreso */
+
+
+/* Progress Div Css  */
+
+
+ul li .progress {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(68, 68, 68);
+    margin: 14px 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.progress::after{
+    content: " ";
+    position: absolute;
+    width: 125px;
+    height: 5px;
+    background-color: rgb(68, 68, 68);
+    right: 30px;
+}
+.one::after{
+    width: 0;
+    height: 0;
+}
+ul li .progress .uil{
+    display: none;
+}
+ul li .progress p{
+    font-size: 13px;
+}
+
+/* Active Css  */
+
+ul li .active{
+    background-color: #7C7EA5;
+    display: grid;
+    place-items: center;
+}
+li .active::after{
+    background-color: #7C7EA5;
+}
+ul li .active p{
+    display: none;
+}
+ul li .active .uil{
+    font-size: 20px;
+    display: flex;
+}
+
+.Direccion {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.direc {
+    display: flex;
+    align-items: center;
+    
+}
+
+.Direccion h5{
+    font-size: 25px;
+    color: #494956;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.Direccion p{
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 0%;
+}
+
+.Direccion .direc .imagen{
+    display: flex;
+    width: 100%;
+    height: 50%;
+   
+}
+
+.Direccion .direc .imagen img{
+    margin-left: 20%;
+    max-width: 76%;
+    height: 76%;
+}
+.form-fields{
+    padding-right: 10%;
+}
+
+.button-container1{
+    margin-top: -3%;
+    margin-bottom: 4%;
+    text-align: center; 
+}
+
+.Pago .container .left .monedero h5{
+    font-size: 35px;
+    color: #494956;
+    font-family: 'Lato', sans-serif;
+   font-weight: 800;
+}
+
+.Pago  h5{
+    margin-top: 2%;
+    font-size: 45px;
+    color: #69697d;
+    font-family: 'Lato', sans-serif;
+   font-weight: 900;
+   text-align: center;
+}
+
+
+.monedero {
+    margin-top: -30%;
+    
+}
+
+.monedero p {
+    font-size: 27px;
+    
+}
+
+.container .left .monedero .cabeza{
+    margin-top: -80%;
+    font-size: 23px;
+    font-weight:400;
+    text-align: center;
+    color: #494956;
+}
+.contenido-monedero .card-user{
+    
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight:200;
+    color: #494956;
+}
+
+
+.monedero .contenido-monedero .front .image img {
+    transform: translate(0px, 6px);
+}
+.monedero .contenido-monedero .front .image {
+    max-width: 60%;
+    height: auto;
+}
+
+.monedero .contenido-monedero .front .image1 img {
+    max-width: 40%;
+    margin-top: -43%;
+    transform: translate(120px, 0px);
+}
+
+.card-saldo{
+    transform:perspective(1000px) rotateY(0deg);
+    transition:transform .4s ease-out;
+    margin-top: -74px;
+    font-size: 55px;
+    font-weight: 900;
+    color: #494956;
+}
+.contenido-monedero span{
+    text-align: center;
+    font-size: 13px;
+    color: #63536c;
+}
+
+.monedero .contenido-monedero .front .image {
+    display: flex; /* Usamos flexbox para centrar vertical y horizontalmente */
+    align-items: center;
+    justify-content: center;
+    height: 90%; /* Ajustamos la altura según sea necesario */
+}
+
+.monedero .contenido-monedero .front .image img {
+    max-width: 30%; /* Ajustamos el tamaño máximo de la imagen */
+    height: auto; /* Para mantener la proporción de la imagen */
+}
+
+
+
+
+
+.contenido-monedero {
+    height: 300px; /* Ajustamos la altura según sea necesario */
+    margin: 20px auto; /* Centramos horizontalmente y agregamos margen superior e inferior */
+    padding: 10px;
+    padding-bottom: 47px;
+    border-radius: 6%;
+    background: linear-gradient(185deg, #d7d7fe, #d2c8ff);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 10px 15px rgba(0, 0, 0, 0.1),
+    0 20px 25px rgba(0, 0, 0, 0.2);
+    transition: .2s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.contenido-monedero .front {
+    
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 13px;
+    backface-visibility: hidden;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform .4s ease-out;
+}
+
+.contenido-monedero .front .flexbox .box {
+    font-size: 14px;
+    min-width: 170px;
+    text-align: left;
+    background: transparent;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0);
+}
+
+.Progreso .direc .imagen{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.Progreso .direc .imagen img{
+    max-width: 76%;
+    height: 76%;
+}
+.Progreso {
+    text-align: center;
+    padding: 20px;
+}
+
+.Progreso .direc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Progreso .direc h5, .Progreso .direc p {
+    margin: 0;
+    text-align: left;
+}
+.Progreso .button-container1 {
+    margin-top: 20px;
+}
+.Progreso h5{
+    font-size: 30px;
+    color: #494956;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.Progreso p{
+    font-size: 12px;
+    margin: 4px;
+    text-align: center;
+}
+
+.Confirmar .container {
+    display: flex;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+}
+
+.Confirmar .left-side {
+    width: 50%; /* Ajusta el ancho según tus necesidades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* Color de fondo para el lado izquierdo */
+}
+
+.Confirmar .right-side {
+    width: 50%; /* Ajusta el ancho según tus necesidades */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    padding: 20px;
+    /* Color de fondo para el lado derecho */
+}
+
+
+.Confirmar .bottom-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.Confirmar .left-side .carrito {
+    border: 1px solid #666;
+    width: 90%; /* Ajusta el ancho según tus necesidades */
+    height: 80%;
+    margin-top: 0;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    transition: .3s;
+}
+
+
+
+.Confirmar .left-side .carrito .carrito-items {
+
+    max-height: 520px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto;
+}
+
+.Confirmar .left-side .carrito .carrito-items::-webkit-scrollbar {
+    width: 12px; /* Ancho del scrollbar */
+   
+}
+
+.Confirmar .left-side .carrito .carrito-items::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.Confirmar .left-side .carrito .carrito-items::-webkit-scrollbar-thumb {
+    background: linear-gradient(#5a5b6e,#b8b8d1);
+    border-radius: 10px;
+    width: 10px;
+}
+
+
+
+
+
+.Confirmar .left-side .carrito .header-carrito {
+    font-size: 13px;
+    background-color: #7C7EA5;
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+}
+
+.Confirmar .left-side .carrito .carrito-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid #666;
+    padding: 20px;
+}
+
+.Confirmar .left-side .carrito .carrito-item img {
+    margin-right: 20px;
+}
+
+.Confirmar .left-side .carrito .carrito-item .carrito-item-titulo {
+    padding-top: 2px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.Confirmar .left-side .carrito .carrito-item .selector-cantidad {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.Confirmar .left-side .carrito .carrito-item .carrito-item-cantidad {
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+    display: inline-block;
+    width: 20px;
+    padding-bottom: 6px;
+    padding-top: 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+.Confirmar .left-side .carrito .carrito-item .selector-cantidad {
+    display: flexbox;
+    margin-right: 25px;
+    justify-content: space-between;
+}
+
+
+
+.Confirmar .left-side .carrito .carrito-item .carrito-item-precio {
+    display: inline-block;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+
+.Confirmar .left-side .carrito .carrito-item .btn-eliminar i {
+    pointer-events: none;
+}
+
+.Confirmar .left-side .carrito .carrito-total {
+    background-color: #a0a1be;
+    padding: 30px;
+}
+.Confirmar .bottom-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    padding: 10px;
+    width: 500px;
+    margin-bottom: 10%;
+   
+}
+
+.Confirmar .right-side .bottom-right h5{
+    margin-top: 0;
+    font-size: 45px;
+    font-weight: 900;
+    color: #494956;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+
+.Confirmar .right-side .bottom-right p{
+    font-size: 25px;
+    color: #848484;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    margin-top: -10px;
+    padding-bottom: 2%;
+}
+.Confirmar .right-side .bottom-right span{
+   
+    font-size: 25px;
+    color: #494956;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    margin-top: -10px;
+}
+
+.Confirmar .right-side .bottom-right .total-amount {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.Confirmar .right-side .bottom-right .discount {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.Confirmar .right-side .bottom-right .final-amount {
+    font-size: 36px;
+    color: #736285;
+    margin: 10px 0 0;
+}
+.top-right {
+   
+    background-color: #f8f9fa; /* Color de fondo claro */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 40px; /* Espaciado interno */
+    max-width: 500px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado horizontal */
+    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: left; /* Alineación del texto */
+}
+
+.top-right h5 {
+    font-family: 'Lato', sans-serif;
+    margin-top: 0;
+    color: #333; /* Color del texto */
+    font-size: 30px; /* Tamaño de fuente */
+    font-weight: 900; /* Peso de fuente */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.top-right p {
+    color: #555; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    line-height: 1.5; /* Altura de línea */
+    margin-bottom: 0; /* Espaciado inferior */
+}
+
+.cancel-button2, .save-button2 {
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #6e709c, #7e7eb2);
+    color: #ffffff;
+    font-size: 16px;
+ 
+}
+
+.cancel-button2:hover, .save-button2:hover {
+    background-color: #464d61;
+    box-shadow: 0 0 10px rgba(163, 113, 199, 0.5);
+}
+@media screen and (max-width: 850px) {
+    .Confirmar .container {
+        flex-direction: column;
+    }
+
+    .Confirmar .left-side, .Confirmar .right-side {
+        width: 100%;
+    }
+
+    .Confirmar .left-side .carrito {
+        width: 100%;
+    }
+
+    .Confirmar .left-side .carrito .carrito-items {
+        max-height: 200px; /* Ajusta la altura máxima según tus necesidades */
+    }
+}
