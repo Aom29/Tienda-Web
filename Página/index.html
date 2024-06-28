@@ -27,7 +27,7 @@
             <div>
                 <ul>
                     <li class="submenu">
-                        <img src="inimgs/car.svg" id="img-carrito" alt="carrito">
+                        <a href="#" class="menu-icono" id="carrito-icon"><img src="inimgs/car.svg" alt="Carrito"></a>
                         <div id="carrito">
                             <table id="lista-carrito">
                                 <thead>
@@ -39,8 +39,12 @@
                                 </thead>
                                 <tbody></tbody>
                             </table>
-                            <a href="#" id="vaciar-carrito" class="btn-2">Vaciar carrito</a>
+                            <div id="botones-carrito" class="text-center">
+                                <button id="vaciar-carrito" class="btn-carrito">Vaciar Carrito</button>
+                                <button id="comprar-carrito" class="btn-carrito">Comprar</button>
+                            </div>
                         </div>
+                        <a href="login.html" class="menu-icono" id="user-icon"><img src="inimgs/user.png" alt="Usuario"></a>
                     </li>
                 </ul>
             </div>
@@ -51,40 +55,16 @@
             </div>
             <div class="header-txt">
                 <h1 style="color: white;">Ofertas especiales</h1>
-                <a href="#" class="btn-1">Ver más</a>
+                <a href="#OFERT" class="btn-1">Ver más</a>
             </div>
         </div>
     </header>
 
-    <section class="ofert container">
-        <div class="ofert-1">
-            <div class="ofert-img">
-                <img src="inimgs/f1.png" alt="">
-            </div>
-            <div class="ofert-txt">
-                <h3>Producto 1</h3>
-                <a href="#" class="btn-2">Información</a>
-            </div>
+    <div class="carousel-container">
+        <div class="carousel" id="carousel-categories">
+            <!-- Las categorías se cargarán aquí dinámicamente -->
         </div>
-        <div class="ofert-1">
-            <div class="ofert-img">
-                <img src="inimgs/f2.png" alt="">
-            </div>
-            <div class="ofert-txt">
-                <h3>Producto 2</h3>
-                <a href="#" class="btn-2">Información</a>
-            </div>
-        </div>
-        <div class="ofert-1">
-            <div class="ofert-img">
-                <img src="inimgs/f3.png" alt="">
-            </div>
-            <div class="ofert-txt">
-                <h3>Producto 3</h3>
-                <a href="#" class="btn-2">Información</a>
-            </div>
-        </div>
-    </section>
+    </div>   
     
     <main class="products container" id="lista-1">
         <h2>Productos</h2>
@@ -92,6 +72,13 @@
             <!-- Productos se cargarán aquí -->
         </div>
     </main>
+
+    <div class="ofertss" id="OFERT">
+        <h2>Mejores ofertas</h2>
+        <section class="ofert container" id="ofertas">
+            <!--Aca para ofertas-->
+        </section>
+    </div>
 
     <section class="icons container"> 
         <div class="icon-1">
@@ -193,10 +180,6 @@
         </div>
     </footer>
     
-
-    <script src="./libs/jquery-3.7.1.min.js"></script>
-    <script src="./libs/sweetAlert.min.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/index_session.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
