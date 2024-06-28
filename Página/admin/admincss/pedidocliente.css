@@ -233,3 +233,171 @@
     .dropdown:hover .dropbtn {
       background-color: #3e8e41;
     }
+
+    
+@media (max-width: 426px) {
+  /* header {
+    margin-top: 30px;
+    display:block;
+    justify-content: space-between;
+} */
+  .table thead {
+      display: none;
+  }
+
+  .table, .table tbody, .table tr, .table td {
+      display: block;
+      width: 100%;
+  }
+
+  .table tr {
+      margin-bottom: 15px;
+  }
+
+  .table td {
+      position: relative;
+      padding-left: 50%;
+      text-align: right;
+  }
+
+  .table td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      text-align: left;
+      font-weight: bold;
+  }
+
+  .table td[data-label="Acción"] {
+      padding-left: 15px;
+  }
+
+  .sort-dropdown {
+   margin-bottom:0px;
+   padding-left: 16%;
+}
+
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 40px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+  }
+
+  .sort-dropdown label {
+    color: #666885;
+    font-weight:100;
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+  .dropbtn:hover .dropdown-content {
+      display: block;
+  }
+   
+    .pe {
+      content: '';
+      color: red;
+      left: 74%;
+      bottom: 30%;
+  }
+
+  .de{
+    content: '';
+    background: green;
+
+    left: 74%;
+    bottom: 30%;
+    
+    }
+
+}
+
+   
+@media (max-width: 768px) and (min-width: 427px)  {
+  header {
+    margin-top: 30px;
+    display:block;
+    justify-content: space-between;
+}
+  .table thead {
+      display: none;
+  }
+
+  .table, .table tbody, .table tr, .table td {
+      display: block;
+      width: 100%;
+  }
+
+  .table tr {
+      margin-bottom: 15px;
+        margin-left: -9px;
+  }
+
+  .table td {
+      position: relative;
+      padding-left: 50%;
+      text-align: right;
+  }
+
+  .table td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      text-align: left;
+      font-weight: bold;
+  }
+
+  .table td[data-label="Acción"] {
+      padding-left: 15px;
+  }
+
+  .sort-dropdown {
+   margin-bottom:0px;
+   padding-left: 16%;
+}
+
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 40px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+  }
+
+  .sort-dropdown label {
+    color: #666885;
+    font-weight:100;
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+  .dropbtn:hover .dropdown-content {
+      display: block;
+  }
+   
+    .pe {
+      content: '';
+      color: red;
+      left: 87%;
+      bottom: 20%;
+  }
+
+  .de{
+    content: '';
+    background: green;
+
+    left: 87%;
+    bottom: 30%;
+    
+    }
+
+}
+
