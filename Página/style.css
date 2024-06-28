@@ -30,7 +30,6 @@ img{
     display: flex;
     align-items: center;
     min-height: 80vh;
-    background-color: #F5F5F5;
     padding: 70px 0;
 }
 
@@ -387,6 +386,7 @@ th {
 
 .descuento {
     position: absolute;
+    display: none;
     top: 10px;
     left: 10px;
     background: #7C7EA5;
@@ -445,10 +445,10 @@ th {
 
 .carousel-container {
     display: flex;
-    overflow: hidden;
-    justify-content: center;
+    overflow-x: auto;
     align-items: center;
-    height: 150px; /* Altura fija del contenedor del carrusel */
+    height: 150px;
+    width: 100%; 
 }
 
 .carousel {
@@ -472,19 +472,6 @@ th {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1;
     border-radius: 50%;
 }
 
@@ -625,6 +612,7 @@ th {
     }
 
     .descuento {
+        display: none;
         top: 5px;
         left: 5px;
     }
