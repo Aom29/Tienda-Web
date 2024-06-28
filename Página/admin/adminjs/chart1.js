@@ -1,25 +1,43 @@
 
+
 const ctx = document.getElementById('myChart1');
 
-new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Enero' , 'Febrero' , 'Marzo','Abril','Mayo' , 'Junio' , 'Julio',  'Agosto' , 'Septiembre','Octubre' , 'Nociembre' , 'Diciembre'],
-        datasets:[{
-            label: 'Productos',
-            data: [120,301,607,278,415,788,221,567,810,452,156,347],
-            borderColor: '#7C7EA5',
-            backgroundColor: '#7C7EA5',
-            borderWidth: 1
+$.ajax({
+  url: "./adminphp/obtenerMeses_AX.php",
+  type: "POST",
+  data: {},
+  cache: false,
+  success: (respAX) => {
+    console.log(respAX);
+    let objRespAX = JSON.parse(respAX);
+    let cantidades = objRespAX.cantidades;
+    let meses = objRespAX.meses;
+    // Guardar cantidades como enteros
+    cantidades = cantidades.map((c) => parseInt(c));
+    console.log(cantidades);
+    console.log(meses);
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: meses,
+        datasets: [{
+          label: 'Productos',
+          data: cantidades,
+          borderColor: '#7C7EA5',
+          backgroundColor: '#7C7EA5',
+          borderWidth: 1
         }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        title: {
-          display: true,
-          text: (ctx) => 'Compras del año',
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Compras del añoooo'
+          }
         }
       }
-    }
+    });
+  }
 });

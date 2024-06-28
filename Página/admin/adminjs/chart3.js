@@ -1,28 +1,46 @@
-  const cty = document.getElementById('myChart3');
+const cty = document.getElementById('myChart3');
+let myChart = null;
 
-  new Chart(cty, {
-    type: 'bar',
-    data: {
-      labels: ['Producto1', 'Producto2', 'Producto3', 'Producto4', 'Producto5'],
-      datasets: [{
-        label: 'Unidades vendidas',
-        data: [50, 29, 31, 12, 20, 41],
-        borderColor: '#a3a4c0',
-        backgroundColor: '#a3a4c0',
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
+$.ajax({
+  url: "./adminphp/obtenerMasVendidos_AX.php",
+  type: "POST",
+  data: {},
+  cache: false,
+  success: (respAX) => {
+    console.log(respAX);
+    let objRespAX = JSON.parse(respAX);
+    let cantidades = objRespAX.cantidades;
+    let productos = objRespAX.productos;
+    // Guardar cantidades como enteros
+    cantidades = cantidades.map((c) => parseInt(c));
+    console.log(cantidades);
+    console.log(productos);
+
+    myChart = new Chart(cty, {
+      type: 'bar',
+      data: {
+        labels: productos,
+        datasets: [{
+          label: 'Unidades vendidas',
+          data: cantidades,
+          borderColor: '#a3a4c0',
+          backgroundColor: '#a3a4c0',
+          borderWidth: 1
+        }]
       },
-      plugins: {
-        title: {
-          display: true,
-          text: (cty) => 'Productos más vendidos',
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Productos más vendidos'
+          }
         }
       }
-    }
-  });
+    });
+  }
+});
