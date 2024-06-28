@@ -55,6 +55,81 @@
             cursor: pointer;
         }
 
+        @media (max-width: 768px) {
+  /* header {
+    margin-top: 30px;
+    display:block;
+    justify-content: space-between;
+} */
+
+  .table, .table tbody, .table tr, .table td {
+      display: block;
+      width: 98%;
+  }
+
+  .sort-dropdown {
+        margin-bottom: 0px;
+        padding-right: 1%;
+    }
+
+    .product {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+} 
+
+@media (max-width: 426px) {
+  .card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        margin: 20px auto;
+        transform: translate(0, 0);
+    }
+
+    .product {
+        width: 90%;
+        max-width: 400px;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    .input-group.half-width {
+        width: 100%;
+    }
+
+    .input-group.one-third-width {
+        width: 100%;
+    }
+
+    .form-fields {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .save-button, .cancel-button {
+        width: 80%;
+        margin: 10px 0;
+    }
+}
+
+
+
+
     </style>
 </head>
     <body>
@@ -143,7 +218,7 @@
                                     <label for="input-file" id="drop-area">
                                         <input type="file" accept="image/*" id="input-file" hidden>
                                         <div id="img-view">
-                                            <img src="inimgs/upload.png" alt="Upload Icon">
+                                            <img src="/Tienda/inimgs/upload.png" alt="Upload Icon">
                                             <p>Arrastra la imagen o haz click <br> para subir la imagen</p>
                                             <span>Sube cualquier imagen desde tu dispositivo</span>
                                         </div>
@@ -203,6 +278,7 @@
                   </select>
               </div>
           </div>
+          <table class="table">
             <thead>
               <tr>
                 <th scope="col" width="100px">ID</th>
@@ -216,13 +292,13 @@
             </thead>
             <tbody>
                 <tr>
-                    <td data-label="Account">#3412</td>
+                    <td data-label="ID">#3412</td>
                     <td data-label="Nombre">Usuario 1</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Due Date">$64.00</td>
-                    <td data-label="Due Date">25</td>
-                    <td data-label="Period" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
                         &nbsp; 
                         <i class="fa-solid fa-trash ticon"></i>
                         
@@ -230,75 +306,80 @@
                     </td>
                   </tr>
           
-              <tr>
-                <td data-label="Account">#3412</td>
-                <td data-label="Nombre">Usuario 1</td>
-                <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                <td data-label="Due Date">$64.00</td>
-                <td data-label="Due Date">25</td>
-                <td data-label="Period" onclick="openModal()"><i class="fa-solid fa-pen-to-square  ticon"></i>
-                  &nbsp; 
-                  <i class="fa-solid fa-trash ticon"></i>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td data-label="Account">#3412</td>
-                <td data-label="Nombre">Usuario 1</td>
-                <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                <td data-label="Due Date">$64.00</td>
-                <td data-label="Due Date">25</td>
-                <td data-label="Period" onclick="openModal()"><i class="fa-solid fa-pen-to-square  ticon"></i>
-                  &nbsp; 
-                  <i class="fa-solid fa-trash ticon"></i>
-                  </div>
-                </td>
-              </tr>
-          
                   <tr>
-                    <td data-label="Account">#3412</td>
+                    <td data-label="ID">#3412</td>
                     <td data-label="Nombre">Usuario 1</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Due Date">$64.00</td>
-                    <td data-label="Due Date">25</td>
-                    <td data-label="Period" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
-                      &nbsp; 
-                      <i class="fa-solid fa-trash ticon"></i>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
                       </div>
                     </td>
                   </tr>
-
                   <tr>
-                    <td data-label="Account">#3412</td>
+                    <td data-label="ID">#3412</td>
                     <td data-label="Nombre">Usuario 1</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Due Date">$64.00</td>
-                    <td data-label="Due Date">25</td>
-                    <td data-label="Period" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
-                      &nbsp; 
-                      <i class="fa-solid fa-trash ticon"></i>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
                       </div>
                     </td>
                   </tr>
           
                   <tr>
-                    <td data-label="Account">#3412</td>
+                    <td data-label="ID">#3412</td>
                     <td data-label="Nombre">Usuario 1</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-                    <td data-label="Due Date">$64.00</td>
-                    <td data-label="Due Date">25</td>
-                    <td data-label="Period" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
-                      &nbsp; 
-                      <i class="fa-solid fa-trash ticon"></i>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
                       </div>
                     </td>
                   </tr>
+
+                  <tr>
+                    <td data-label="ID">#3412</td>
+                    <td data-label="Nombre">Usuario 1</td>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
+                      </div>
+                    </td>
+                  </tr>
+          
+                  <tr>
+                    <td data-label="ID">#3412</td>
+                    <td data-label="Nombre">Usuario 1</td>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
+                      </div>
+                    </td>
+                  </tr>
+
                   <div id="editModal" class="modal">
                     <div class="modal-content">
                         <span class="close" onclick="closeModal()">&times;</span>
