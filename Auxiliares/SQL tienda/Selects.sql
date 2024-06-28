@@ -1,7 +1,7 @@
-drop database grappe1;
+-- drop database grappe1;
 
 use grappe1;
-select * from categoria;
+select * from producto;
 -- SELECTS CLIENTE
 
 -- Para iniciar sesión (Se utiliza la variable correo)
@@ -16,7 +16,7 @@ select * from cliente where Email = 'david.perez@hotmail.com';
 -- Si num_rows == 0 => Insertar el nuevo usuario
 
 -- Para verificar sesión (Se utiliza la variable id_cliente)
-select * from cliente where id_cliente = 201;
+select * from cliente where id_cliente = 1;
 -- Como en privado_AX para poner en index.html y login.html
 -- Validar con el js correspondiente si la sesión está activa
 
@@ -92,6 +92,7 @@ select * from pedido_has_producto;
 -- delete from pedido_has_producto where id_pedido = 1;
 
 -- Borrar todos los productos del carrito
+SELECT id_cliente FROM cliente WHERE Email = 'carlos.lopez@gmail.com';
 DELETE FROM producto_carrito WHERE cliente_id_cliente = 1;
 
 -- Ver pedidos de un cliente ($id_cliente)
@@ -102,3 +103,6 @@ INNER JOIN pedido_has_producto pp on pp.id_producto = p.id_producto
 INNER JOIN pedido pe on pe.id_pedido = pp.id_pedido
 INNER JOIN cliente c on c.id_cliente = pe.id_cliente
 WHERE c.id_cliente = 1;
+
+-- BORRAR UN CLIENTE
+DELETE FROM cliente WHERE id_cliente = 1;

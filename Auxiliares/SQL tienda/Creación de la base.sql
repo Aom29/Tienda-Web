@@ -102,7 +102,7 @@ COLLATE = utf8mb4_unicode_ci;
 CREATE TABLE IF NOT EXISTS `grappe1`.`producto` (
   `id_producto` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(255) NOT NULL,
-  `Precio` DECIMAL(15,0) NOT NULL,
+  `Precio` DECIMAL(15,2) NOT NULL,
   `Stock` INT NOT NULL,
   `id_categoria` INT NOT NULL,
   `Descuento` DECIMAL(10,2) NOT NULL,
