@@ -347,8 +347,7 @@ ul li .active .uil{
         margin-left: -30px;
     }
     .Confirmar .bottom-right {
-        margin-top: 10%;
-        margin-left: -50%;
+        margin-right: -20%;
     }
     .Pago .container {
         padding-right: 10%;
@@ -392,6 +391,8 @@ ul li .active .uil{
         margin: 15px 0;
     }
 }
+
+
 
 
 .Pago .container .left .monedero h5{
