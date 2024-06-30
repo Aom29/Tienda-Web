@@ -1,6 +1,12 @@
 $(document).ready(()=>{
-    const validator = new JustValidate("form#datosRegistro");
+    let admin = 0;
+    // Verificar si la casilla de admin está activada en el html
+    // if($("#adminMarked").is(":checked")) admin = 1;
+    // Leer el valor del input con la clave (numérica) para iniciar sesión como administrador
+    let claveAdmin = "12345678";
+    // let claveAdmin = $("input#claveAdmin").val();
 
+    const validator = new JustValidate("form#datosRegistro");
     validator
     .addField("input#nombreRegistro",[
       {
@@ -40,10 +46,18 @@ $(document).ready(()=>{
       let apellidoRegistro = $("#apellidoRegistro").val();
       let emailRegistro = $("#emailRegistro").val();
       let passwordRegistro = $("#passwordRegistro").val();
+      let url = "";
+      // Si el emailLogin termina en grappe.com es una administrador
+      if(emailRegistro.endsWith("grappe.com")) admin = 1;
+      else admin = 0;
+      if(admin == 1)
+        url = "./php/registroAdmin_AX.php";
+      else
+        url = "./php/registroCliente_AX.php";
       $.ajax({
-        url:"./php/registro_AX.php",
+        url:url,
         type:"POST",
-        data:{nombreRegistro:nombreRegistro, apellidoRegistro:apellidoRegistro, emailRegistro:emailRegistro, passwordRegistro:passwordRegistro},
+        data:{nombreRegistro:nombreRegistro, apellidoRegistro:apellidoRegistro, emailRegistro:emailRegistro, passwordRegistro:passwordRegistro, claveAdmin:claveAdmin},
         cache:false,
         success:(respAX)=>{
           let objRespAX = JSON.parse(respAX);
@@ -55,8 +69,8 @@ $(document).ready(()=>{
             icon:objRespAX.icono,
             didDestroy:()=>{
               if(objRespAX.cod == 1){
-                sessionStorage.setItem("emailRegistro",emailRegistro);
-                window.location.href = "./index.html";
+                // Redirigir al inicio de sesion
+                window.location.href = "./login.html";
               }else{
                 // window.location.reload();
               }

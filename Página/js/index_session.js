@@ -1,11 +1,16 @@
-if(!sessionStorage.getItem("emailLogin")){
-  $("a#nombreUsuario").text("No identificado");
+if(!localStorage.getItem("emailLogin")){
+  // $("a#nombreUsuario").text("No identificado");
+}
+// Me redirige a la página de administrador si el usuario es un administrador
+if(localStorage.getItem("admin") == 1){
+  window.location.href = "./admin/admin.html";
 }
 $(document).ready(()=>{
-  let emailLogin = sessionStorage.getItem("emailLogin");
+  let emailLogin = localStorage.getItem("emailLogin");
 
   $("a#cerrarSesion").click(()=>{
-    sessionStorage.removeItem("emailLogin");
+    localStorage.removeItem("emailLogin");
+    localStorage.removeItem("admin");
     window.location.href = "./index.html";
   });
 

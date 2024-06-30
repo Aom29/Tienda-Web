@@ -42,11 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mostrarProductosBase(){
-        let emailLogin = sessionStorage.getItem("emailLogin");
         $.ajax({
             url:"./php/mostrarProductos_AX.php",
             type:"POST",
-            data:{emailLogin:emailLogin},
+            data:{},
             cache:false,
             success:(respAX)=>{
                 // console.log(respAX);
@@ -90,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function llenarCarritoBase() {
-        let emailLogin = sessionStorage.getItem("emailLogin");
+        let emailLogin = localStorage.getItem("emailLogin");
         $.ajax({
             url:"./php/llenarCarrito_AX.php",
             type:"POST",
@@ -118,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function insertarCarrito(elemento) {
         // Insertar en la base
-        let emailLogin = sessionStorage.getItem("emailLogin");
+        let emailLogin = localStorage.getItem("emailLogin");
         let idProducto = elemento.id;
         $.ajax({
             url:"./php/insertarCarrito_AX.php",
@@ -152,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('borrar')) {
             console.log(e.target.getAttribute('data-id'));
             // Eliminar de la base de datos el elemento con el id correspondiente
-            let emailLogin = sessionStorage.getItem("emailLogin");
+            let emailLogin = localStorage.getItem("emailLogin");
             let idProducto = e.target.getAttribute('data-id');
             $.ajax({
                 url:"./php/eliminarElementoCarrito_AX.php",
@@ -175,10 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
         while (lista.firstChild) {
             lista.removeChild(lista.firstChild);
         }
-        if(!sessionStorage.getItem("emailLogin")){
-            // $("a#nombreUsuario").text("No identificado");
-        }
-        let emailLogin = sessionStorage.getItem("emailLogin");
+        // comprobarCarritoVacio();
+        // if(!localStorage.getItem("emailLogin")){
+        //     // $("a#nombreUsuario").text("No identificado");
+        // }
+        let emailLogin = localStorage.getItem("emailLogin");
         $.ajax({
             url:"./php/vaciarCarrito_AX.php",
             type:"POST",
@@ -190,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(objRespAX.mensaje);
             }
         });
-        comprobarCarritoVacio();
 
         return false;
     }
