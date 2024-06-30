@@ -35,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 let filas = "";
                 clientes.forEach((cliente) => {
                     filas += `<tr>
-                                <td data-label="Account">#${cliente.id_cliente}</td>
-                                <td data-label="Amount">${cliente.Nombre}</td>
-                                <td data-label="Amount">${cliente.Apellido}</td>
-                                <td data-label="Amount">${cliente.Email}</td>
-                                <td data-label="Period"><i class="fa-solid fa-trash  ticon"></i>
+                                <td data-label="ID">#${cliente.id_cliente}</td>
+                                <td data-label="Nombre">${cliente.Nombre}</td>
+                                <td data-label="Apellido">${cliente.Apellido}</td>
+                                <td data-label="Email">${cliente.Email}</td>
+                                <td data-label="Borrar"><i class="fa-solid fa-trash  ticon" data-id="${cliente.id_cliente}"></i>
                                     &nbsp; 
                                   </div>
                                 </td>
@@ -50,5 +50,44 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Eliminar un cliente al hacer click en el botón de borrar y preguntar si esta seguro de eliminar al cliente con sweetalert
+    document.getElementById('tbodyClientes').addEventListener('click', (e) => {
+        if (e.target.classList.contains('fa-trash')) {
+            console.log(e.target.getAttribute('data-id'));
+            // Eliminar de la base de datos el elemento con el id correspondiente
+            let idCliente = e.target.getAttribute('data-id');
+            console.log(idCliente);
+            Swal.fire({
+                title: '¿Estás seguro de eliminar este cliente?',
+                text: "No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "./adminphp/eliminarCliente_AX.php",
+                        type: "POST",
+                        data: {idCliente: idCliente},
+                        cache: false,
+                        success: (respAX) => {
+                            console.log(respAX);
+                            let objRespAX = JSON.parse(respAX);
+                            console.log(objRespAX.mensaje);
+                            obtenerClientes(filter, buscador);
+                        }
+                    });
+                    Swal.fire(
+                        'Eliminado!',
+                        'El cliente ha sido eliminado.',
+                        'success'
+                    );
+                }
+            });
+        }
+    });
 
 });

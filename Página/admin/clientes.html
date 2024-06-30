@@ -51,7 +51,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../login.html">
+                        <!-- Le puse el id cerrarSesion para el js -->
+                        <a id = "cerrarSesion" href="../login.html">
                             <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                             <span class="title">Cerrar Sesión</span>
                         </a>
@@ -181,7 +182,12 @@
         
         <!-- libs -->
         <script src="./adminlibs/jquery-3.7.1.min.js"></script>
+        <script src="./adminlibs/sweetAlert.min.js"></script>
+        <script src="./adminlibs/justValidate.min.js"></script>
         
+        <!-- Sesion -->
+        <script src="adminjs/admin_session.js"></script>
+
         <!-- Base de datos -->
         <script src="adminjs/clientes.js"></script>
 
