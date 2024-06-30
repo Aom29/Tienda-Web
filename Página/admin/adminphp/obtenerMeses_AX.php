@@ -1,5 +1,21 @@
 <?php
 
+    // Mapear los meses con su numero y mes respectivo
+    $mesString = array(
+        1 => 'Enero',
+        2 => 'Febrero',
+        3 => 'Marzo',
+        4 => 'Abril',
+        5 => 'Mayo',
+        6 => 'Junio',
+        7 => 'Julio',
+        8 => 'Agosto',
+        9 => 'Septiembre',
+        10 => 'Octubre',
+        11 => 'Noviembre',
+        12 => 'Diciembre'
+    );
+
     $conexion = mysqli_connect("localhost", "root", "", "grappe1");
     mysqli_query($conexion, "SET NAMES 'utf8'");
     // Consultar los mas vendidos por mes
@@ -14,7 +30,7 @@
     $meses = array();
     while($reg = mysqli_fetch_array($res)){
         $cantidades[] = $reg['cantidad'];
-        $meses[] = $reg['meses'];
+        $meses[] = $mesString[$reg['meses']];
     }
     $respAX = [
         'cantidades' => $cantidades,

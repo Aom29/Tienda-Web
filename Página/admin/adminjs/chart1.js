@@ -34,7 +34,7 @@ $.ajax({
         plugins: {
           title: {
             display: true,
-            text: 'Compras del añoooo'
+            text: 'Compras del año'
           }
         }
       }
