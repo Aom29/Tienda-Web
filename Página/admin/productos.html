@@ -190,7 +190,7 @@
                 <!-- Buscador -->
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Buscar">
+                        <input id="buscador" type="text" placeholder="Buscar">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
@@ -269,8 +269,8 @@
               <div class="sort-dropdown">
                   <label for="sort-select">Ordenar por:</label>
                   <select id="sort-select">
-                      <option value="oldest">Mayor precio</option>
-                      <option value="oldest">Menor precio</option>
+                      <option value="mayor-precio">Mayor precio</option>
+                      <option value="menor-precio">Menor precio</option>
                       <option value="category">Categoria</option>
                       <option value="a-z">A-Z</option>
                       <option value="z-a">Z-A</option>
@@ -290,7 +290,7 @@
                 <th scope="col" width="100px">Acción</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tbodyProductos">
                 <tr>
                     <td data-label="ID">#3412</td>
                     <td data-label="Nombre">Usuario 1</td>
@@ -499,6 +499,13 @@
 });
 
         </script>
+
+        <!-- libs -->
+        <script src="./adminlibs/jquery-3.7.1.min.js"></script>
+        
+        <!-- Base de datos -->
+        <script src="adminjs/productos.js"></script>
+
             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
            <script src="adminjs/barranav.js"></script>

@@ -86,7 +86,7 @@
                 <!-- Buscador -->
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Buscar">
+                        <input id="buscador" type="text" placeholder="Buscar">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
@@ -130,7 +130,7 @@
             <th scope="col" width="100px">Acción</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="tbodyPedidos">
         <tr>
             <td data-label="ID">#3412</td>
             <td data-label="Nombre">Usuario 1</td>
@@ -245,11 +245,17 @@
               
 
         </div>
+
+        <!-- libs -->
+        <script src="./adminlibs/jquery-3.7.1.min.js"></script>
+        
+        <!-- Base de datos -->
+        <script src="adminjs/pedidos.js"></script>
         
             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
             <script src="adminjs/barranav.js"></script>
-            <script src ="adminjs/dropdown3.js"></script>
+            <!-- <script src ="adminjs/dropdown3.js"></script> -->
             <script src="adminjs/dropdown.js"></script>
             
             
