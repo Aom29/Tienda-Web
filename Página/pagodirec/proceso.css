@@ -472,7 +472,6 @@ ul li .active .uil{
 
 
 .card-saldo{
-    margin-top: -10%;
     transform:perspective(1000px) rotateY(0deg);
     transition:transform .4s ease-out;
     font-size: 55px;
