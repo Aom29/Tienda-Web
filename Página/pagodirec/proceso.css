@@ -5,6 +5,7 @@
 
 *{
     margin: 0; padding:0;
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -125,7 +126,7 @@
 
 ul {
     display: flex;
-    margin-top: 10%;
+    margin-top: 5%;
     justify-content: center;
 }
 
@@ -142,7 +143,8 @@ ul li .icon {
     margin: 0 60px;
 }
 
-ul li .text {
+ul li p .text {
+    
     font-size: 14px;
     font-weight: 100;
     color: #7C7EA5;
@@ -243,9 +245,7 @@ ul li .active .uil{
     max-width: 76%;
     height: 76%;
 }
-.form-fields{
-    padding-right: 10%;
-}
+
 
 .button-container1{
     margin-top: -3%;
@@ -453,32 +453,28 @@ ul li .active .uil{
     color: #494956;
 }
 .contenido-monedero .card-user{
-    
-    margin-left: 10px;
+
     font-size: 20px;
     font-weight:200;
     color: #494956;
 }
 
 
-.monedero .contenido-monedero .front .image img {
-    transform: translate(0px, 6px);
-}
-.monedero .contenido-monedero .front .image {
-    max-width: 60%;
-    height: auto;
+.modal-content .contenido-monedero .front .image img {
+
+        width: 150px;
+        transform: translate(130px, 35px);
+        height: auto;
+    
 }
 
-.monedero .contenido-monedero .front .image1 img {
-    max-width: 40%;
-    margin-top: -43%;
-    transform: translate(120px, 0px);
-}
+
+
 
 .card-saldo{
+    margin-top: -10%;
     transform:perspective(1000px) rotateY(0deg);
     transition:transform .4s ease-out;
-    margin-top: -74px;
     font-size: 55px;
     font-weight: 900;
     color: #494956;
@@ -506,9 +502,9 @@ ul li .active .uil{
 
 
 .contenido-monedero {
-    height: 300px; /* Ajustamos la altura según sea necesario */
+    width: 430px;
+    height: 250px;
     margin: 20px auto; /* Centramos horizontalmente y agregamos margen superior e inferior */
-    padding: 10px;
     padding-bottom: 47px;
     border-radius: 6%;
     background: linear-gradient(185deg, #d7d7fe, #d2c8ff);
@@ -539,7 +535,6 @@ ul li .active .uil{
     text-align: left;
     background: transparent;
     color: #fff;
-    padding: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0);
 }
 
@@ -817,7 +812,7 @@ ul li .active .uil{
     margin-bottom: 0; /* Espaciado inferior */
 }
 
-.cancel-button2, .save-button2 {
+.cancel-button2, .save-button2,.cancel-button3, .save-button3 {
     padding: 10px 20px;
     margin-left: 10px;
     cursor: pointer;
@@ -829,7 +824,7 @@ ul li .active .uil{
  
 }
 
-.cancel-button2:hover, .save-button2:hover {
+.cancel-button2:hover, .save-button2:hover, .cancel-button3:hover, .save-button3:hover{
     background-color: #464d61;
     box-shadow: 0 0 10px rgba(163, 113, 199, 0.5);
 }

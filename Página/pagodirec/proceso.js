@@ -11,11 +11,16 @@ window.onload = function() {
     c.style.display = "none";
     d.style.display = "none";
 
+    const one = document.querySelector(".one");
+    const two = document.querySelector(".two");
+    const three = document.querySelector(".three");
+    const four = document.querySelector(".four");
+
     // Marcamos el primer paso como activo
-    document.getElementById('Uno').classList.add("active");
-    document.getElementById('Dos').classList.remove("active");
-    document.getElementById('Tres').classList.remove("active");
-    document.getElementById('Cuatro').classList.remove("active");
+    one.classList.add("active");
+    two.classList.remove("active");
+    three.classList.remove("active");
+    four.classList.remove("active");
 }
 
 // Función para mostrar la sección deseada según el parámetro
@@ -57,16 +62,32 @@ function show(param_div_id){
     }
 
     // Actualizamos el estado activo de los pasos
-    var steps = document.querySelectorAll(".step");
-    steps.forEach(function(step) {
-        step.classList.remove("active");
-    });
+    var one = document.querySelector(".one");
+    var two = document.querySelector(".two");
+    var three = document.querySelector(".three");
+    var four = document.querySelector(".four");
 
-    // Marcamos como activo el paso correspondiente
-    document.getElementById(param_div_id + "-step").classList.add("active");
+    one.classList.add("active");
+    if(param_div_id === "Pago") {
+        two.classList.add("active");
+        three.classList.remove("active");
+        four.classList.remove("active");
+    } else if(param_div_id === "Confirmar") {
+        two.classList.add("active");
+        three.classList.add("active");
+        four.classList.remove("active");
+    } else if(param_div_id === "Progreso") {
+        two.classList.add("active");
+        three.classList.add("active");
+        four.classList.add("active");
+    } else {
+        two.classList.remove("active");
+        three.classList.remove("active");
+        four.classList.remove("active");
+    }
 }
 
-// Listener para el botón de cancelar del primer contenedor
+// BOTONES
 document.addEventListener('DOMContentLoaded', function() {
     const cancelButton2 = document.querySelector('.cancel-button2');
     cancelButton2.addEventListener('click', function() {
@@ -87,6 +108,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    const cancelButton = document.querySelector('.cancel-button');
+    cancelButton.addEventListener('click', function() {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¿Realmente deseas cancelar?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, cancelar',
+            cancelButtonText: 'No, volver'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirigir al index.html
+                window.location.href = 'index.html';
+            }
+        });
+    });
+
+    const cancelButton3 = document.querySelector('.cancel-button3');
+    cancelButton3.addEventListener('click', function() {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¿Realmente deseas cancelar?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, cancelar',
+            cancelButtonText: 'No, volver'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirigir al index.html
+                window.location.href = 'index.html';
+            }
+        });
+    });
+
+    const saveButton3 = document.querySelector('.save-button3');
+    saveButton3.addEventListener('click', function() {
+        Swal.fire({
+            title: '¡Método de pago confirmado!',
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Aceptar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Mostrar la sección de Confirmar
+                show('Confirmar');
+            }
+        });
+    });
+
     // Listener para el botón de guardar del primer contenedor
     const saveButton2 = document.querySelector('.save-button2');
     saveButton2.addEventListener('click', function() {
@@ -103,35 +177,92 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    const saveButton = document.querySelector('.save-button');
+    saveButton.addEventListener('click', function() {
+        Swal.fire({
+            title: '¡Dirección guardada!',
+            text: 'La Dirección ha sido procesado correctamente.',
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Aceptar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Mostrar la sección de Pago
+                show('Pago');
+            }
+        });
+    });
+
 });
 
-const elements1 = document.querySelectorAll(".one, .two, .three, .four");
+// Función para validar que solo se ingresen números
+function validarNumeros(input) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+}
 
-elements1.forEach((element1, index) => {
-    element1.onclick = function() {
-        // Si el elemento clicado es el de Progreso, no hacer nada
-        if (index === 3) {
-            return;
-        }
+//OPENMODAL
+function openModal() {
+            
+    document.getElementById('editModal').style.display = "block";
+    document.getElementById('editForm').reset();
+}
 
-        // Remueve la clase "active" de todos los elementos
-        elements1.forEach(el => el.classList.remove("active"));
+function closeModal() {
+    document.getElementById('editModal').style.display = "none";
+}
 
-        // Agrega la clase "active" al elemento clicado y a todos los anteriores
-        for (let i = 0; i <= index; i++) {
-            elements1[i].classList.add("active");
-        }
-    };
-});
+window.onclick = function(event) {
+    var modal = document.getElementById('editModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
-// Función para marcar el recuadro al continuar
-function marcarRecuadro() {
-    // Obtener el elemento de Progreso
-    const progresoElement = document.querySelector(".four");
-    
-    // Remover la clase "active" de todos los elementos
-    elements1.forEach(el => el.classList.remove("active"));
+function openModal1() {
+            
+    document.getElementById('editModal1').style.display = "block";
+    document.getElementById('editForm').reset();
+}
 
-    // Agregar la clase "active" al elemento de Progreso
-    progresoElement.classList.add("active");
+function closeModal1() {
+    document.getElementById('editModal1').style.display = "none";
+}
+
+window.onclick = function(event) {
+    var modal1 = document.getElementById('editModal1');
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+}
+
+//PONER INFO EN LA TARJETA
+document.querySelector('.card-number-input').oninput = () =>{
+    document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
+}
+
+document.querySelector('.card-holder-input').oninput = () =>{
+    document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
+}
+
+document.querySelector('.month-input').oninput = () =>{
+    document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
+}
+
+document.querySelector('.year-input').oninput = () =>{
+    document.querySelector('.exp-year').innerText = document.querySelector('.year-input').value;
+}
+
+document.querySelector('.cvv-input').onmouseenter = () =>{
+    document.querySelector('.front1').style.transform = 'perspective(1000px) rotateY(-180deg)';
+    document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
+}
+
+document.querySelector('.cvv-input').onmouseleave = () =>{
+    document.querySelector('.front1').style.transform = 'perspective(1000px) rotateY(0deg)';
+    document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
+}
+
+document.querySelector('.cvv-input').oninput = () =>{
+    document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
 }
