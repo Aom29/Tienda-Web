@@ -1,4 +1,3 @@
-
 .container1{
 
     height: 500px;
@@ -218,10 +217,10 @@ label .imgName{
 
 .container2 .card-container1 .front1 {
     position: absolute;
+    top: -10px;
+    left: 40px;
     height: 100%;
     width: 100%;
-    top: -10px;
-    left: 58px;
     background: linear-gradient(45deg, blueviolet, rgb(188, 159, 211));
     border-radius: 5px;
     backface-visibility: hidden;
@@ -315,63 +314,82 @@ label .imgName{
     margin-top: 30px;
     height: 30px;
 }
-@media (max-width: 1024px) and (min-width: 600px) 
-{
-    .container2 .card-container1 .front1 {
-        left: 100px;
-    }
 
-    .container2 .card-container1 .back {
-        left: 100px;
-    }
-
-    .close {
-        transform: translate(20px,2px);
-    }
-
-    .modal-content {
-         padding: 0px; 
-    }
-
+@media (max-width: 1024px) {
     .modal-content {
         width: 80%;
-    }
-
-    .contenido-monedero{
-        transform: translate(10px, 60px);
-    }
-    .button-container {
-        transform: translate(10px, 25px);
     }
 }
+@media (max-width: 500px) and (min-width: 81px) 
+ {
+    .modal-content .contenido-monedero .front .image img {
+        width: 150px;
+        transform: translate(105px, 55px);
+        height: auto;
+    }
+    .close {
+        margin-top: -25px;
+    }
+    .container2 .formulario1 {
+        padding: 3%;
+        padding-top: 210px;
+        margin-left: -16px;
+    }
+    .modal-content {
+        width: 90%;
+    }
 
-@media (max-width: 768px) and (min-width: 427px) {
-
+    .container2 .card-container1 .front1,
+    .container2 .card-container1 .back {
+        left: 0;
+    }
 
     .container2 .card-container1 .front1 {
-        left: 100px;
-    }
-
-    .container2 .card-container1 .back {
-        left: 100px;
-    }
-
+        position: absolute;
+        top: 40px;
+        height: 90%;
+        width: 87%;
+}
+    .contenido-monedero {
+    margin-left: -50px;
+    width: 380px; 
+    height: 250px;
+    margin: 20px auto;
+    padding-bottom: 47px;
+    border-radius: 6%;
+    background: linear-gradient(185deg, #d7d7fe, #d2c8ff);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1), 0 20px 25px rgba(0, 0, 0, 0.2);
+    transition: .2s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 50px; */
+}
+}
+@media (max-width: 900px) and (min-width: 500px) 
+ {
     .close {
-        transform: translate(20px,2px);
+        margin-top: -25px;
     }
-
+    .container2 .formulario1 {
+        padding: 3%;
+        padding-top: 210px;
+        margin-left: -16px;
+    }
     .modal-content {
-         padding: 0px; 
+        width: 90%;
     }
 
-    .modal-content {
-        width: 80%;
+    .container2 .card-container1 .front1,
+    .container2 .card-container1 .back {
+        left: 0;
     }
 
-    .contenido-monedero{
-        transform: translate(10px, 60px);
-    }
-    .button-container {
-        transform: translate(10px, 25px);
-    }
+    .container2 .card-container1 .front1 {
+        position: absolute;
+        top: 40px;
+        height: 90%;
+        width: 87%;
+        left: 150px;
+}
 }
