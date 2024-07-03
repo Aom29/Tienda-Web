@@ -84,8 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
             // Agregar el producto al contenedor
             productosContainer.appendChild(productoDiv);
+    
+            // Agregar el evento para agregar al carrito
+            productoDiv.querySelector('.agregar-carrito').addEventListener('click', comprarElemento);
         });
     }
+    
 
     function mostrarOfertas(productos) {
         const contenedor = document.getElementById('ofertas');
