@@ -342,7 +342,7 @@ span {
 .categoria-productos .product .agregar-carrito {
     display: inline-block;
     padding: 7px 10px;
-    background-color: #7C7EA5;
+    background-color: #7C7EA9;
     color: #FFFFFF;
     border-radius: 10px;
     font-size: 15px;
@@ -353,8 +353,8 @@ span {
 }
 
 .categoria-productos .product .agregar-carrito:hover {
-    background-color: white;
-    color: #5d5e7e;
+    background-color: #5d5e7e;
+    color: white;
     border-radius: 15px;
     font-size: 15px;
 }
@@ -433,19 +433,18 @@ span {
 .agregar-carrito {
     display: inline-block;
     padding: 7px 10px;
-    background-color: #7C7EA5;
+    background-color: #7C7EA9;
     color: #FFFFFF;
     border-radius: 10px;
     font-size: 15px;
-    border-color: #7C7EA5;
     margin-top: 10px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .agregar-carrito:hover {
-    background-color: white;
-    color: #5d5e7e;
+    background-color: #5d5e7e;
+    color: white;
     border-radius: 15px;
     font-size: 15px;
 }
