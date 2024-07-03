@@ -9,31 +9,32 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="menu container">
-            <a href="#" class="logo">Grappe</a>
-            <input type="checkbox" id="menu"/>
-            <label for="menu">
-                <img src="inimgs/menu.png" class="menu-icono" alt="menu">
-            </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#header">Inicio</a></li>
-                    <li><a href="#product-content">Productos</a></li>
-                    <li><a href="#footer">Contacto</a></li>
-                </ul>
-            </nav>
-            <div>
-                <ul>
-                    <li class="submenu">
+    <div class="menu container">
+        <a href="#" class="logo">Grappe</a>
+        <input type="checkbox" id="menu"/>
+        <label for="menu">
+            <img src="inimgs/menu.png" class="menu-icono" alt="menu">
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#header">Inicio</a></li>
+                <li><a href="#lista-1">Productos</a></li>
+                <li><a href="#footer">Contacto</a></li>
+            </ul>
+        </nav>
+        <div>
+            <ul>
+                <li class="submenu">
+                    <div class="menu-iconoCar">
                         <a href="#" class="menu-icono" id="carrito-icon"><img src="inimgs/car.svg" alt="Carrito"></a>
-                        <div id="carrito">
+                        <div id="carrito" class="hidden" style="min-width: 250px">
                             <table id="lista-carrito">
                                 <thead>
                                     <tr>
                                         <th></th>
                                         <th>Nombre</th>
                                         <th>Precio</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -43,11 +44,13 @@
                                 <button id="comprar-carrito" class="btn-carrito">Comprar</button>
                             </div>
                         </div>
-                        <a href="login.html" class="menu-icono" id="user-icon"><img src="inimgs/user.png" alt="Usuario"></a>
-                    </li>
-                </ul>
-            </div>
+                    </div>
+                    <a href="login.html" class="menu-iconoUs" id="user-icon"><img src="inimgs/user.png" alt="Usuario"></a>
+                </li>
+            </ul>
         </div>
+    </div>
+    <header class="header">
         <div class="header-content container">
             <div class="header-img">
                 <img src="inimgs/right.png" alt="">
@@ -63,7 +66,14 @@
         <div class="carousel" id="carousel-categories">
             <!-- Las categorías se cargarán aquí dinámicamente -->
         </div>
-    </div>   
+    </div>
+    
+    <div id="productos-container" class="categoria-productos">
+        <h2 id="categoria-titulo"></h2>
+        <!-- Aquí se agregarán dinámicamente los productos de la categoría seleccionada -->
+    </div>
+    
+    
     
     <br>
 
@@ -80,6 +90,9 @@
             <!--Aca para ofertas-->
         </section>
     </div>
+    <br>
+    <br>
+    <h2>Te puede interesar</h2>
 
     <section class="icons container"> 
         <div class="icon-1">
@@ -123,7 +136,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer-content container">
             <div class="link">
                 <h3>Nuestra Misión</h3>
@@ -164,9 +177,12 @@
         </div>
     </footer>
     
+    
+    <script src="index.js"></script>  <!--Eliminar este-->
     <script src="./libs/jquery-3.7.1.min.js"></script>
     <script src="./libs/sweetAlert.min.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/index_session.js"></script>
+
 </body>
 </html>
