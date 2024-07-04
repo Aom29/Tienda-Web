@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <!--Barra de menú-->
     <div class="menu container">
         <a href="#" class="logo">Grappe</a>
         <input type="checkbox" id="menu"/>
@@ -24,12 +25,14 @@
         </nav>
         <div>
             <ul>
+                <!--Bienvenida, iconos de carro, usuario y cierre-->
                 <li class="submenu">
                     <div class="menu-saludo">
                         <span id="saludo-usuario">Bienvenido, user</span>
                     </div>
                     <div class="menu-iconoCar">
                         <a href="#" class="menu-icono" id="carrito-icon"><img src="inimgs/car.svg" alt="Carrito"></a>
+                        <!--Carrito que aparece al hacer hover en iconoCar-->
                         <div id="carrito" class="hidden" style="min-width: 250px">
                             <table id="lista-carrito">
                                 <thead>
@@ -58,6 +61,8 @@
             </ul>
         </div>
     </div>
+
+    <!--Cuadro grandote que dice "ofertas especiales"-->
     <header class="header">
         <div class="header-content container">
             <div class="header-img">
@@ -70,12 +75,14 @@
         </div>
     </header>
 
+    <!--Carrusel de categorias-->
     <div class="carousel-container">
         <div class="carousel" id="carousel-categories">
             <!-- Las categorías se cargarán aquí dinámicamente -->
         </div>
     </div>
     
+    <!--Sección que aparece al dar clic en una categoría-->
     <div id="productos-container" class="categoria-productos">
         <h2 id="categoria-titulo"></h2>
         <!-- Aquí se agregarán dinámicamente los productos de la categoría seleccionada -->
@@ -85,6 +92,7 @@
     
     <br>
 
+    <!--Nuevos productos-->
     <main class="products container" id="lista-1">
         <h2> Nuevos Productos</h2>
         <div class="product-content" id="product-content">
@@ -92,6 +100,7 @@
         </div>
     </main>
 
+    <!--Mejores ofertas-->
     <div class="ofertss" id="OFERT">
         <h2>Mejores ofertas</h2>
         <div class="product-content" id="ofertas">
@@ -100,8 +109,9 @@
     </div>
     <br>
     <br>
-    <h2>Te puede interesar</h2>
 
+    <!--Cuadros de tips-->
+    <h2>Te puede interesar</h2>
     <section class="icons container"> 
         <div class="icon-1">
             <div class="icon-img">
@@ -138,12 +148,14 @@
         </div>
     </section>
 
+    <!--Imagen del final-->
     <section class="big container">
         <div class="blog">
             <img src="inimgs/g.svg" alt="">
         </div>
     </section>
 
+    <!--Footer-->
     <footer class="footer" id="footer">
         <div class="footer-content container">
             
@@ -179,7 +191,7 @@
         </div>
     </footer>
     
-    
+    <!--Libs-->
     <script src="index.js"></script>  <!--Eliminar este-->
     <script src="./libs/jquery-3.7.1.min.js"></script>
     <script src="./libs/sweetAlert.min.js"></script>
