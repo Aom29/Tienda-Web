@@ -84,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`pedido` (
   `Pais` VARCHAR(50) NOT NULL,
   `Total` INT NOT NULL,
   `Fecha` DATE NOT NULL,
+  `Enviado` TINYINT NOT NULL,
   PRIMARY KEY (`id_pedido`),
   INDEX `id_cliente` (`id_cliente` ASC),
   CONSTRAINT `pedido_ibfk_1`
@@ -157,6 +158,7 @@ CREATE TABLE IF NOT EXISTS `grappe1`.`pedido_has_producto` (
   `id_producto` INT NOT NULL,
   `id_pedido` INT NOT NULL,
   `cantidad` INT NOT NULL,
+  `precio_compra` INT NOT NULL,
   INDEX `id_producto` (`id_producto` ASC, `id_pedido` ASC),
   INDEX `id_pedido` (`id_pedido` ASC),
   PRIMARY KEY (`id_producto`, `id_pedido`),
