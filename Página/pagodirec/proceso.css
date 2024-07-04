@@ -34,13 +34,7 @@
     padding: 10px 20px; 
 }
 
-.swal2-popup {
-    height:auto !important; /* Ajusta la altura según sea necesario */
-    max-width:max-content !important; /* Limita el ancho máximo */
-    padding: 20px !important; /* Ajusta el relleno interno */
-   
-    
-}
+
 
 .Pago .container{
     margin-top: 22%;
@@ -328,8 +322,15 @@ ul li .active .uil{
 }
 
 @media (max-width: 480px) {
-
+    .direc {
+        display:block;
+        align-items: center;
+    }
    
+    element.style {
+        color: white;
+        font-size: 10px;
+    }
 
     ul li .text {
         font-size: 10px;
