@@ -7,7 +7,8 @@ if(localStorage.getItem("admin") == 0){
 }
 $(document).ready(()=>{
     let emailLogin = localStorage.getItem("emailLogin");
-
+    console.log(emailLogin);
+    console.log(localStorage.getItem("admin"));
     $("a#cerrarSesion").click((event)=>{
         event.preventDefault();
         localStorage.removeItem("emailLogin");
