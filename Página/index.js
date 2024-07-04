@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Para mostrar en otra pagina el producto al que se dio clic (trabajando en eso)
     function mostrarDetallesProducto(producto) {
         localStorage.setItem('productoDetalles', JSON.stringify(producto));
-        window.location.href = 'producto.html';
+        window.location.href = 'Detalles.html';
     }
 
     //Genera las estrellas dependiendo del rating del producto
