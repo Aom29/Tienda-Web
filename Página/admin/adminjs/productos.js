@@ -21,39 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     
-    // Obtener de la base los datos la informacion de los productos considerando el valor del filtro y buscador
-    function obtenerProductos(filter,buscador) {
-        $.ajax({
-            url: "./adminphp/obtenerProductos_AX.php",
-            type: "POST",
-            data: {filter:filter,buscador:buscador},
-            cache: false,
-            success: (respAX) => {
-                // console.log(respAX);
-                let objRespAX = JSON.parse(respAX);
-                // console.log(objRespAX);
-                let productos = objRespAX.productos;
-                // Generar las filas de la tabla
-                let filas = "";
-                productos.forEach((producto) => {
-                    filas += `<tr>
-                                <td data-label="ID">#${producto.id_producto}</td>
-                                <td data-label="Nombre">${producto.Nombre}</td>
-                                <td data-label="Descripción">${producto.Descripcion}</td>
-                                <td data-label="Categoria">${producto.Categoria}</td>
-                                <td data-label="Precio">$${producto.Precio}</td>
-                                <td data-label="Stock">${producto.Stock}</td>
-                                <td data-label="Estatus" style="position: relative;">
-                                    <i class="fa-solid fa-pen-to-square  ticon" data-id="${producto.id_producto}"></i>&nbsp;
-                                    <i class="fa-solid fa-trash ticon" data-id="${producto.id_producto}"></i>
-                                </td>
-                              </tr>`;
-                });
-                // Mostrar los datos en la página
-                $("#tbodyProductos").html(filas);
-            }
-        });
-    }
+
 
     // Poder editar la información de un producto si se da click en el icono con la clase fa-pen-to-square en el siguiente modal
     /*
@@ -233,3 +201,82 @@ function showModal() {
         }
     }
 }
+
+//ELIMINAR PRODUCTO
+document.getElementById('tbodyProductos').addEventListener('click', (e) => {
+  if (e.target.classList.contains('fa-trash')) {
+      let idProducto = e.target.getAttribute('data-id');
+      Swal.fire({
+          title: '¿Estás seguro de eliminar este producto?',
+          text: "No podrás revertir esto!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, eliminarlo!'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              $.ajax({
+                  url: "./adminphp/eliminarProducto_AX.php",
+                  type: "POST",
+                  data: { idProducto: idProducto },
+                  cache: false,
+                  success: (respAX) => {
+                      let objRespAX = JSON.parse(respAX);
+                      Swal.fire({
+                          icon: objRespAX.icon,
+                          title: objRespAX.message
+                      }).then(() => {
+                        location.reload();
+                          // Aquí llamamos a una función para recargar la lista de productos
+                          obtenerProductos(); // Asumo que tienes esta función para recargar la lista de productos
+                      });
+                  },
+                  error: (xhr, status, error) => {
+                      Swal.fire({
+                          icon: 'error',
+                          title: 'Error',
+                          text: 'Hubo un problema al eliminar el producto.'
+                      });
+                  }
+              });
+          }
+      });
+  }
+});
+
+    // Obtener de la base los datos la informacion de los productos considerando el valor del filtro y buscador
+    function obtenerProductos(filter,buscador) {
+      $.ajax({
+          url: "./adminphp/obtenerProductos_AX.php",
+          type: "POST",
+          data: {filter:filter,buscador:buscador},
+          cache: false,
+          success: (respAX) => {
+              // console.log(respAX);
+              let objRespAX = JSON.parse(respAX);
+              // console.log(objRespAX);
+              let productos = objRespAX.productos;
+              // Generar las filas de la tabla
+              let filas = "";
+              productos.forEach((producto) => {
+                  filas += `<tr>
+                              <td data-label="ID">#${producto.id_producto}</td>
+                              <td data-label="Nombre">${producto.Nombre}</td>
+                              <td data-label="Descripción">${producto.Descripcion}</td>
+                              <td data-label="Categoria">${producto.Categoria}</td>
+                              <td data-label="Precio">$${producto.Precio}</td>
+                              <td data-label="Stock">${producto.Stock}</td>
+                              <td data-label="Estatus" style="position: relative;">
+                                  <i class="fa-solid fa-pen-to-square  ticon" data-id="${producto.id_producto}"></i>&nbsp;
+                                  <i class="fa-solid fa-trash ticon" data-id="${producto.id_producto}"></i>
+                              </td>
+                            </tr>`;
+              });
+              // Mostrar los datos en la página
+              $("#tbodyProductos").html(filas);
+          }
+      });
+  }
+
+
