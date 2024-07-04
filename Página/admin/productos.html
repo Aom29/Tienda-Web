@@ -203,78 +203,68 @@
                 </a>
             </div>
             <header>
-
-              <div class="text" ID="producto1">
+                <div class="text">
                   <h2 class="animated-text">Productos</h2>    
-    
-                  <form action="../admin/adminphp/añadirProducto_AX.php" method="post" enctype="multipart/form-data" id="#productform">   
+                  <!-- <form action="#" id="nuevoProducto">            -->
                     <table>
-                        <center>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2>Agregar Producto</h2>
-                                    <button id="toggle-btn">+</button>
+                      <center>
+                      <div class="card">
+                        <div class="card-header">
+                            <h2>Agregar Producto</h2>
+                            <button id="toggle-btn">+</button>
+                        </div>
+                        <div class="product-content">
+                            <div class="product">
+                                <div class="hero">
+                                    <label for="input-file" id="drop-area">
+                                        <input type="file" accept="image/*" id="input-file" hidden>
+                                        <div id="img-view">
+                                            <img src="/Tienda/inimgs/upload.png" alt="Upload Icon">
+                                            <p>Arrastra la imagen o haz click <br> para subir la imagen</p>
+                                            <span>Sube cualquier imagen desde tu dispositivo</span>
+                                        </div>
+                                    </label>
                                 </div>
-                                <div class="product-content">
-                                    <div class="product">
-                                        <div class="hero">
-                                            <label for="input-file" id="drop-area">
-                                              <input type="file" name="thumbnail" accept="image/*" id="input-file" hidden>
-                                                <div id="img-view">
-                                                    <img src="/Tienda/inimgs/upload.png" alt="Upload Icon">
-                                                    <p>Arrastra la imagen o haz click <br> para subir la imagen</p>
-                                                    <span>Sube cualquier imagen desde tu dispositivo</span>
-                                                </div>
-                                            </label>
-                                        </div>
-                                        <div class="form-fields">
-                                            <div class="input-group half-width">
-                                              <input type="text" name="nombre" id="nombre" autocomplete="off" required>
-                                              <label for="nombre">Nombre</label>
-                                            </div>
-                                            <div class="input-group half-width">
-                                              <select name="categoria" id="categoria" required>
-                                                  <option value="" disabled selected>Selecciona una categoría</option>
-                                                  <?php foreach ($categorias as $categoria): ?>
-                                                      <option value="<?= $categoria['id_categoria'] ?>"><?= $categoria['Nombre'] ?></option>
-                                                  <?php endforeach; ?>
-                                              </select>
-                                              <label for="categoria"></label>
-                                          </div>
-                                          <div class="input-group full-width">
-                                              <input type="text" name="descripcion" id="descripcion" autocomplete="off" required>
-                                              <label for="descripcion">Descripción</label>
-                                            </div>
-                                            <div class="input-group one-third-width">
-                                              <input type="text" name="precio" id="precio" autocomplete="off" oninput="validarNumeros(this)" required>
-                                              <label for="precio">Precio</label>
-                                            </div>
-                                            <div class="input-group one-third-width">
-                                              <input type="text" name="descuento" id="descuento" oninput="validarNumeros(this)" autocomplete="off">
-                                              <label for="descuento">Descuento</label>
-                                            </div>
-                                            <div class="input-group one-third-width">
-                                              <input type="text" name="stock" id="stock" autocomplete="off" oninput="validarNumeros(this)" required>
-                                              <label for="stock">Stock</label>
-                                            </div>
-                                        </div>
-                                        <div class="button-container">
-                                          <button class="cancel-button">Cancelar</button>
-                                          <button class="save-button">Guardar</button>
-                                      </div>
+                                <div class="form-fields">
+                                    <div class="input-group half-width">
+                                      <input type="text" id="nombre" autocomplete="off" required>
+                                      <label for="nombre">Nombre</label>
                                     </div>
-                                    
+                                    <div class="input-group half-width">
+                                      <select id="categoria" required>
+                                        <option value="" disabled selected>Selecciona una categoría</option>
+                                        <option value="categoria1">Categoría 1</option>
+                                        <option value="categoria2">Categoría 2</option>
+                                        <option value="categoria3">Categoría 3</option>
+                                    </select>
+                                    <label for="categoria"></label>
+                                    </div>
+                                    <div class="input-group full-width">
+                                      <input type="text" id="descripcion"  autocomplete="off" required>
+                                      <label for="descripcion">Descripción</label>
+                                    </div>
+                                    <div class="input-group one-third-width">
+                                      <input type="text" id="precio" autocomplete="off" oninput="validarNumeros(this)" required>
+                                      <label for="precio">Precio</label>
+                                    </div>
+                                    <div class="input-group one-third-width">
+                                      <input type="text" id="descuento" autocomplete="off"  oninput="validarNumeros(this)" >
+                                      <label for="descuento">Descuento</label>
+                                    </div>
+                                    <div class="input-group one-third-width">
+                                      <input type="text" id="stock"  autocomplete="off" oninput="validarNumeros(this)" required>
+                                      <label for="stock">Stock</label>
+                                    </div>
                                 </div>
+                                <div class="button-container">
+                                  <button class="cancel-button">Cancelar</button>
+                                  <button class="save-button">Guardar</button>
+                              </div>
                             </div>
-                        </center>
-                    </table>
-                </form>
-
-
-              </div>
-          </header>
-
-
+                            
+                        </div>
+                    </div>
+                  </center>
             <div class="header-row">
               <p>Últimos productos registrados</p>
               <div class="sort-dropdown">
@@ -317,7 +307,79 @@
                     </td>
                   </tr>
           
-                  
+                  <tr>
+                    <td data-label="ID">#3412</td>
+                    <td data-label="Nombre">Usuario 1</td>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="ID">#3412</td>
+                    <td data-label="Nombre">Usuario 1</td>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
+                      </div>
+                    </td>
+                  </tr>
+          
+                  <tr>
+                    <td data-label="ID">#3412</td>
+                    <td data-label="Nombre">Usuario 1</td>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td data-label="ID">#3412</td>
+                    <td data-label="Nombre">Usuario 1</td>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
+                      </div>
+                    </td>
+                  </tr>
+          
+                  <tr>
+                    <td data-label="ID">#3412</td>
+                    <td data-label="Nombre">Usuario 1</td>
+                    <td data-label="Descripción">Lorem ispum dummy text industry.</td>
+                    <td data-label="Categoria">Lorem ispum dummy text industry.</td>
+                    <td data-label="Precio">$64.00</td>
+                    <td data-label="Stock">25</td>
+                    <td data-label="Estatus" onclick="openModal()" ><i class="fa-solid fa-pen-to-square  ticon"></i>
+                        &nbsp; 
+                        <i class="fa-solid fa-trash ticon"></i>
+                        
+                      </div>
+                    </td>
+                  </tr>
 
                   <div id="modalProducto" class="modal">
                     <div class="modal-content">
@@ -366,7 +428,7 @@
           </table>
         <!-- </form>    -->
                 </div>
-
+              </header>
               
               
               
@@ -448,7 +510,6 @@
 
         <!-- Base de datos -->
         <script src="adminjs/productos.js"></script>
-        <script src="adminphp/agregarProducto.js"></script>
 
 
             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
