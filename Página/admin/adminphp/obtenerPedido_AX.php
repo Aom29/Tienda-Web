@@ -73,7 +73,7 @@
     $res = mysqli_query($conexion, $sql);
     $pedido = mysqli_fetch_assoc($res);
     // Se debe obtener Nombre, Precio, Cantidad
-    $sql = "SELECT p.Nombre as 'Nombre', p.Precio as 'Precio', pp.cantidad as 'Cantidad'
+    $sql = "SELECT p.Nombre as 'Nombre', pp.precio_compra as 'Precio', pp.cantidad as 'Cantidad'
     FROM producto p INNER JOIN pedido_has_producto pp ON p.id_producto = pp.id_producto WHERE pp.id_pedido = $idPedido";
     $res = mysqli_query($conexion, $sql);
     $productos = [];
