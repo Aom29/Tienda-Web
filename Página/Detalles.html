@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Producto</title>
+    <link rel="stylesheet" href="Detalles.css" />
+</head>
+<body>
+    <header>
+        <!--Barra de menú-->
+        <div class="menu container">
+            <a href="#" class="logo">Grappe</a>
+            <input type="checkbox" id="menu"/>
+            <label for="menu">
+                <img src="inimgs/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#lista-1">Productos</a></li>
+                    <li><a href="#footer">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-buscador">
+                <form action="buscar.html" method="GET">
+                    <input type="text" name="q" placeholder="Buscar...">
+                    <button type="submit"><img src="inimgs/search.png" alt="Buscar"></button>
+                </form>
+            </div>
+            <div class="submenu">
+                <div class="menu-saludo">
+                    <span id="saludo-usuario">user</span>
+                </div>
+                <div class="menu-iconoCar">
+                    <a href="#" class="menu-icono" id="carrito-icon"><img src="inimgs/car.svg" alt="Carrito"></a>
+                    <div id="carrito" class="hidden" style="min-width: 250px">
+                        <table id="lista-carrito">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Artículo</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <div id="total-carrito">
+                            <h3>Total: $<span id="total-precio">0.00</span></h3>
+                        </div>
+                        <div id="botones-carrito" class="text-center">
+                            <button id="vaciar-carrito" class="btn-carrito">Vaciar Carrito</button>
+                            <button id="comprar-carrito" class="btn-carrito">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="login.html" class="menu-iconoUs" id="user-icon"><img src="inimgs/user.png" alt="Usuario"></a>
+                <a href="#" class="menu-iconoUs" id="off-icon"><img src="inimgs/off.png" alt="Off"></a>
+            </div>
+        </div>
+    </header>
+
+    <br>
+    <br>
+    <br>
+    <main>
+        <div class="container-img">
+            <img
+                src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                alt="imagen-producto"
+            />
+        </div>
+
+		<br>
+		<br>
+        <div class="container-info-product">
+            <div class="container-price">
+                <h2>Nike - Roshe Run</h2>
+                <span>$95.00</span>
+            </div>
+
+            <div class="container-add-cart">
+                <div class="container-quantity">
+                    <input
+                        type="number"
+                        placeholder="1"
+                        value="1"
+                        min="1"
+                        class="input-quantity"
+                    />
+                    <div class="btn-increment-decrement">
+                        <i class="fa-solid fa-chevron-up" id="increment"></i>
+                        <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                    </div>
+                </div>
+                <button class="btn-add-to-cart">
+                    <i class="fa-solid fa-plus"></i>
+                    Añadir al carrito
+                </button>
+            </div>
+
+            <div class="container-description">
+                <div class="title-description">
+                    <h4>Descripción</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-description">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Laboriosam iure provident atque voluptatibus
+                        reiciendis quae rerum, maxime placeat enim cupiditate
+                        voluptatum, temporibus quis iusto. Enim eum qui delectus
+                        deleniti similique? Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Sint autem magni earum est
+                        dolorem saepe perferendis repellat ipsam laudantium cum
+                        assumenda quidem quam, vero similique? Iusto officiis
+                        quod blanditiis iste?
+                    </p>
+                </div>
+            </div>
+
+            <div class="container-additional-information">
+                <div class="title-additional-information">
+                    <h4>Información adicional</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-additional-information hidden">
+                    <p>-----------</p>
+                </div>
+            </div>
+
+            <div class="container-reviews">
+                <div class="title-reviews">
+                    <h4>Reseñas</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-reviews hidden">
+                    <div class="review">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                        </div>
+                        <p class="review-text">Excelente producto, muy recomendado.</p>
+                        <p class="review-author">Por: Juan Pérez | 2024-07-05</p>
+                    </div>
+
+					<br>
+                    <div class="review">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">Buen producto, llegó rápido.</p>
+                        <p class="review-author">Por: María Gómez | 2024-07-05</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-social">
+                <span>Compartir</span>
+                <div class="container-buttons-social">
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="container-related-products">
+        <h1>Productos Relacionados</h1>
+        <div class="card-list-products">
+            <div class="card">
+                <div class="card-img">
+                    <img
+                        src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80"
+                        alt="producto-1"
+                    />
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Nike - Roshe Run</h3>
+                        <p class="category">Footwear, Sneakers</p>
+                    </div>
+                    <div class="price">$85.00</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img
+                        src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1131&q=80"
+                        alt="producto-2"
+                    />
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Common Projects Achilles</h3>
+                        <p class="category">Footwear, Sneakers</p>
+                    </div>
+                    <div class="price">$255.00</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img
+                        src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                        alt="producto-3"
+                    />
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Adidas - Boston Super OG</h3>
+                        <p class="category">Footwear, Sneakers</p>
+                    </div>
+                    <div class="price">$105.00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+    <!--Footer-->
+    <footer class="footer" id="footer">
+        <div class="footer-content container">
+            
+            <div class="link">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.8080465727894!2d3.5408836762111813!3d43.6521618711022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b15a2dab07855f%3A0x13b6ab1211b3e014!2sGrappe!5e0!3m2!1ses-419!2smx!4v1720054218340!5m2!1ses-419!2smx" width="450" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="link">
+                <h3>Nuestra Misión</h3>
+                <ul>
+                    <li><a href="#footer">Mejorar la vida de nuestros clientes con productos innovadores.</a></li>
+                    <li><a href="#footer">Crear un ambiente de trabajo inclusivo y diverso.</a></li>
+                    <li><a href="#footer">Contribuir positivamente a nuestras comunidades.</a></li>
+                    <li><a href="#footer">Ser líderes en sostenibilidad y responsabilidad social.</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Nuestros Valores</h3>
+                <ul>
+                    <li><a href="#footer">Integridad</a></li>
+                    <li><a href="#footer">Innovación</a></li>
+                    <li><a href="#footer">Calidad</a></li>
+                    <li><a href="#footer">Compromiso</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="#footer">Teléfono: +123456789</a></li>
+                    <li><a href="#footer">Email: Empresa@grappe.com</a></li>
+                    <li><a href="#footer">Dirección: Av. Pierre Mendès France</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script
+        src="https://kit.fontawesome.com/81581fb069.js"
+        crossorigin="anonymous"
+    ></script>
+    <script src="Detalles.js"></script>
+</body>
+</html>
