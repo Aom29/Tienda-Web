@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const categorias = obtenerCategorias(productos);
                 mostrarCategorias(categorias, productos);
                 mostrarOfertas(productos);
-                const productosAleatorios = obtenerProductosAleatorios(productos, 12);
+                const productosAleatorios = obtenerProductosAleatorios(productos, 8);
                 mostrarProductos(productosAleatorios);
             });
     }
@@ -55,22 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mostrarProductosPorCategoria(categoria, productos) {
-        // Filtrar productos por categoría seleccionada
         const productosFiltrados = productos.filter(producto => producto.category === categoria);
-    
-        // Obtener el contenedor donde se mostrarán los productos
         const productosContainer = document.getElementById('productos-container');
         productosContainer.innerHTML = '';
-    
-        // Recorrer los productos filtrados y crear elementos HTML para cada uno
+
         productosFiltrados.forEach(producto => {
             const precioConDescuento = (producto.price * (1 - producto.discountPercentage / 100)).toFixed(2);
-    
-            // Crear el elemento de producto
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('product');
-    
-            // Estructura interna del producto
+
             productoDiv.innerHTML = `
                 <div class="desco">${producto.discountPercentage}% OFF</div>
                 <img src="${producto.thumbnail}" alt="${producto.title}">
@@ -81,36 +74,45 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar al carrito</a>
                 </div>
             `;
-    
-            // Agregar el producto al contenedor
+
             productosContainer.appendChild(productoDiv);
-    
-            // Agregar el evento para agregar al carrito
+
             productoDiv.querySelector('.agregar-carrito').addEventListener('click', comprarElemento);
+            productoDiv.querySelector('img').addEventListener('click', () => mostrarDetallesProducto(producto));
+            productoDiv.querySelector('h3').addEventListener('click', () => mostrarDetallesProducto(producto));
         });
     }
-    
+
+    function mostrarDetallesProducto(producto) {
+        localStorage.setItem('productoDetalles', JSON.stringify(producto));
+        window.location.href = 'producto.html';
+    }
 
     function mostrarOfertas(productos) {
         const contenedor = document.getElementById('ofertas');
         contenedor.innerHTML = '';
         const ofertas = productos.sort((a, b) => b.discountPercentage - a.discountPercentage).slice(0, 3);
         ofertas.forEach(producto => {
+            const precioConDescuento = (producto.price * (1 - producto.discountPercentage / 100)).toFixed(2);
             const div = document.createElement('div');
-            div.classList.add('ofert-1');
+            div.classList.add('product');
             div.innerHTML = `
                 <div class="desco">${producto.discountPercentage}% OFF</div>
-                <div class="ofert-img">
-                    <img src="${producto.thumbnail}" alt="${producto.title}">
-                </div>
-                <div class="ofert-txt">
+                <img src="${producto.thumbnail}" alt="${producto.title}">
+                <div class="product-txt">
                     <h3>${producto.title}</h3>
-                    <a href="#" class="btn-2">Información</a>
+                    <div class="star-rating">${crearEstrellas(producto.rating)}</div>
+                    <p class="precio"><span class="tachado">$${producto.price}</span> $${precioConDescuento}</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar al carrito</a>
                 </div>
             `;
             contenedor.appendChild(div);
+            div.querySelector('.agregar-carrito').addEventListener('click', comprarElemento);
+            div.querySelector('img').addEventListener('click', () => mostrarDetallesProducto(producto));
+            div.querySelector('h3').addEventListener('click', () => mostrarDetallesProducto(producto));
         });
     }
+    
 
     function obtenerProductosAleatorios(productos, cantidad) {
         const productosAleatorios = [];
@@ -143,6 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             contenedor.appendChild(div);
+            div.querySelector('.agregar-carrito').addEventListener('click', comprarElemento);
+            div.querySelector('img').addEventListener('click', () => mostrarDetallesProducto(producto));
+            div.querySelector('h3').addEventListener('click', () => mostrarDetallesProducto(producto));
         });
     }
 

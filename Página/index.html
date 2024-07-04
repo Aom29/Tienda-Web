@@ -25,6 +25,9 @@
         <div>
             <ul>
                 <li class="submenu">
+                    <div class="menu-saludo">
+                        <span id="saludo-usuario">Bienvenido, user</span>
+                    </div>
                     <div class="menu-iconoCar">
                         <a href="#" class="menu-icono" id="carrito-icon"><img src="inimgs/car.svg" alt="Carrito"></a>
                         <div id="carrito" class="hidden" style="min-width: 250px">
@@ -43,9 +46,14 @@
                                 <button id="vaciar-carrito" class="btn-carrito">Vaciar Carrito</button>
                                 <button id="comprar-carrito" class="btn-carrito">Comprar</button>
                             </div>
+                            <div id="total-carrito">
+                                <h3>Total: $<span id="total-precio">0.00</span></h3>
+                            </div>
+                            
                         </div>
                     </div>
                     <a href="login.html" class="menu-iconoUs" id="user-icon"><img src="inimgs/user.png" alt="Usuario"></a>
+                    <a href="#" class="menu-iconoUs" id="off-icon"><img src="inimgs/off.png" alt="Off"></a>
                 </li>
             </ul>
         </div>
@@ -86,9 +94,9 @@
 
     <div class="ofertss" id="OFERT">
         <h2>Mejores ofertas</h2>
-        <section class="ofert container" id="ofertas">
-            <!--Aca para ofertas-->
-        </section>
+        <div class="product-content" id="ofertas">
+            <!-- Productos de ofertas se cargarán aquí -->
+        </div>
     </div>
     <br>
     <br>
@@ -132,46 +140,40 @@
 
     <section class="big container">
         <div class="blog">
-            <img src="inimgs/b1.jpg" alt="">
+            <img src="inimgs/g.svg" alt="">
         </div>
     </section>
 
     <footer class="footer" id="footer">
         <div class="footer-content container">
+            
+            <div class="link">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.8080465727894!2d3.5408836762111813!3d43.6521618711022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b15a2dab07855f%3A0x13b6ab1211b3e014!2sGrappe!5e0!3m2!1ses-419!2smx!4v1720054218340!5m2!1ses-419!2smx" width="450" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
             <div class="link">
                 <h3>Nuestra Misión</h3>
                 <ul>
-                    <li><a href="#">Mejorar la vida de nuestros clientes con productos innovadores.</a></li>
-                    <li><a href="#">Crear un ambiente de trabajo inclusivo y diverso.</a></li>
-                    <li><a href="#">Contribuir positivamente a nuestras comunidades.</a></li>
-                    <li><a href="#">Ser líderes en sostenibilidad y responsabilidad social.</a></li>
+                    <li><a href="#footer">Mejorar la vida de nuestros clientes con productos innovadores.</a></li>
+                    <li><a href="#footer">Crear un ambiente de trabajo inclusivo y diverso.</a></li>
+                    <li><a href="#footer">Contribuir positivamente a nuestras comunidades.</a></li>
+                    <li><a href="#footer">Ser líderes en sostenibilidad y responsabilidad social.</a></li>
                 </ul>
             </div>
             <div class="link">
                 <h3>Nuestros Valores</h3>
                 <ul>
-                    <li><a href="#">Integridad</a></li>
-                    <li><a href="#">Innovación</a></li>
-                    <li><a href="#">Calidad</a></li>
-                    <li><a href="#">Compromiso</a></li>
-                </ul>
-            </div>
-            <div class="link">
-                <h3>Nuestros Productos</h3>
-                <ul>
-                    <li><a href="#">Productos de alta tecnología</a></li>
-                    <li><a href="#">Soluciones personalizadas para cada cliente</a></li>
-                    <li><a href="#">Garantía de satisfacción</a></li>
-                    <li><a href="#">Líderes en innovación en la industria</a></li>
+                    <li><a href="#footer">Integridad</a></li>
+                    <li><a href="#footer">Innovación</a></li>
+                    <li><a href="#footer">Calidad</a></li>
+                    <li><a href="#footer">Compromiso</a></li>
                 </ul>
             </div>
             <div class="link">
                 <h3>Contacto</h3>
                 <ul>
-                    <li><a href="#">Teléfono: +123456789</a></li>
-                    <li><a href="#">Email: contacto@empresa.com</a></li>
-                    <li><a href="#">Dirección: Calle Principal, Ciudad, País</a></li>
-                    <li><a href="#">Síguenos en redes sociales</a></li>
+                    <li><a href="#footer">Teléfono: +123456789</a></li>
+                    <li><a href="#footer">Email: Empresa@grappe.com</a></li>
+                    <li><a href="#footer">Dirección: Av. Pierre Mendès France</a></li>
                 </ul>
             </div>
         </div>

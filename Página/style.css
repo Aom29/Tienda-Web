@@ -67,6 +67,20 @@ img{
     display: none;
 }
 
+.menu-saludo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; 
+    color: #DCDCDC; 
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+#saludo-usuario {
+    margin: 0;
+    padding: 0;
+}
+
 .menu-iconoCar {
     width: 25px;
     margin: 0 10px;
@@ -378,7 +392,7 @@ span {
     margin-bottom: 50px;
 }
 
-.product-content {
+.product-content, #ofertas {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -582,12 +596,20 @@ body h2{
 
 .footer{
     padding: 50px 0;
-    background-color: #111111;
+    background-color: #5d5e7e;
 }
 
 .footer-content{
     display: flex;
     justify-content: space-between;
+}
+
+.footer iframe{
+    border-radius: 20%;
+}
+
+.link{
+    margin-right: 1cm;
 }
 
 .link h3{
