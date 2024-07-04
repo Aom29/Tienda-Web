@@ -24,45 +24,44 @@
                 <li><a href="#footer">Contacto</a></li>
             </ul>
         </nav>
-        <div>
-            <ul>
-                <!--Bienvenida, iconos de carro, usuario y cierre-->
-                <li class="submenu">
-                    <div class="menu-saludo">
-                        <span id="saludo-usuario">Bienvenido, user</span>
+        <div class="menu-buscador">
+            <form action="buscar.html" method="GET">
+                <input type="text" name="q" placeholder="Buscar...">
+                <button type="submit"><img src="inimgs/search.png" alt="Buscar"></button>
+            </form>
+        </div>
+        <div class="submenu">
+            <div class="menu-saludo">
+                <span id="saludo-usuario">user</span>
+            </div>
+            <div class="menu-iconoCar">
+                <a href="#" class="menu-icono" id="carrito-icon"><img src="inimgs/car.svg" alt="Carrito"></a>
+                <div id="carrito" class="hidden" style="min-width: 250px">
+                    <table id="lista-carrito">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Artículo</th>
+                                <th>Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <div id="total-carrito">
+                        <h3>Total: $<span id="total-precio">0.00</span></h3>
                     </div>
-                    <div class="menu-iconoCar">
-                        <a href="#" class="menu-icono" id="carrito-icon"><img src="inimgs/car.svg" alt="Carrito"></a>
-                        <!--Carrito que aparece al hacer hover en iconoCar-->
-                        <div id="carrito" class="hidden" style="min-width: 250px">
-                            <table id="lista-carrito">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Artículo</th>
-                                        <th>Precio</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                            
-                            <div id="total-carrito">
-                                <h3>Total: $<span id="total-precio">0.00</span></h3>
-                            </div>
-                            <div id="botones-carrito" class="text-center">
-                                <button id="vaciar-carrito" class="btn-carrito">Vaciar Carrito</button>
-                                <button id="comprar-carrito" class="btn-carrito">Comprar</button>
-                            </div>
-                            
-                        </div>
+                    <div id="botones-carrito" class="text-center">
+                        <button id="vaciar-carrito" class="btn-carrito">Vaciar Carrito</button>
+                        <button id="comprar-carrito" class="btn-carrito">Comprar</button>
                     </div>
-                    <a href="login.html" class="menu-iconoUs" id="user-icon"><img src="inimgs/user.png" alt="Usuario"></a>
-                    <a href="#" class="menu-iconoUs" id="off-icon"><img src="inimgs/off.png" alt="Off"></a>
-                </li>
-            </ul>
+                </div>
+            </div>
+            <a href="login.html" class="menu-iconoUs" id="user-icon"><img src="inimgs/user.png" alt="Usuario"></a>
+            <a href="#" class="menu-iconoUs" id="off-icon"><img src="inimgs/off.png" alt="Off"></a>
         </div>
     </div>
+    
 
     <!--Cuadro grandote que dice "ofertas especiales"-->
     <header class="header">
