@@ -157,6 +157,11 @@ button.incrementar:hover, button.decrementar:hover {
     background-color: #7C7EA9;
 }
 
+#total-carrito{
+    color: #DCDCDC;
+    text-align: center;
+}
+
 #botones-carrito {
     text-align: center; 
     margin-top: 20px; 
@@ -819,6 +824,9 @@ body h2{
     .categoria-productos .product .desco {
         top: 5px;
         left: 5px;
+    }
+    .footer iframe{
+        width: fit-content;
     }
 }
 
